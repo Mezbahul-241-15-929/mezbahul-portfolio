@@ -1,45 +1,13 @@
 import Image from "next/image";
 import Homepage from "./components/Homepage";
+import Aboutme from "./components/Aboutme";
 
 export default function Home() {
   return (
     <>
 
     <Homepage />
-
-      {/* About Section */}
-      <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-            About <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Me</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <p className="text-gray-300 text-lg leading-relaxed">
-                I'm a full-stack developer with a passion for creating elegant solutions to complex problems. With expertise in modern web technologies, I build responsive and user-friendly applications.
-              </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                My journey in tech has been filled with exciting projects and continuous learning. I believe in writing clean, maintainable code and delivering exceptional user experiences.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-blue-500/20 border border-blue-400 text-blue-300 rounded-full text-sm font-medium">React</span>
-                <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-sm font-medium">Next.js</span>
-                <span className="px-4 py-2 bg-blue-500/20 border border-blue-400 text-blue-300 rounded-full text-sm font-medium">TypeScript</span>
-                <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-sm font-medium">Tailwind CSS</span>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-500 rounded-lg blur opacity-30"></div>
-              <div className="relative bg-black p-8 rounded-lg border border-cyan-400/30">
-                <p className="text-gray-400 text-center text-2xl font-bold">🚀</p>
-                <p className="text-white text-center mt-4">Experienced in delivering high-quality projects on time</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <Aboutme />
 
       {/* Projects Section */}
       <section id="projects" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
