@@ -1,0 +1,58 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "7th National Comdeca 2025",
+      "dates": "19-25 February, 2025",
+      "duration": "7 Days",
+      "location": "Hard Point, Sirajganj, Bangladesh",
+      "organizer": "Bangladesh Scouts",
+      "links": []
+    },
+    {
+      "id": 2,
+      "name": "5th Air Cub Scout Unite Leader Basic Course of Bangladesh Scouts, Air Region",
+      "dates": "11-15 May, 2025",
+      "duration": "5 Days",
+      "location": "Regional Scout Training Center, Rupatali, Barisal",
+      "organizer": "Bangladesh Scouts, Air Region supported by Daffodil International University Air Rover Scout Group",
+      "links": []
+    },
+    {
+      "id": 3,
+      "name": "11th Rover Mate Course of Bangladesh Scouts, Air Region",
+      "dates": "9-13 July, 2024",
+      "duration": "5 Days",
+      "location": "Regional Scout Training Center, Pulerhat, Jessore",
+      "organizer": "Bangladesh Scouts, Air Region supported by Daffodil International University Air Rover Scout Group",
+      "links": []
+    },
+    {
+      "id": 4,
+      "name": "67th Jamboree on the Air (JOTA) and 28th Jamboree on the Internet (JOTI)",
+      "dates": "19 October, 2024",
+      "duration": "1 Day",
+      "location": "Daffodil Smart City, Birulia, Savar, Dhaka-1216",
+      "organizer": "Bangladesh Scouts, Air Region supported by Daffodil International University Air Rover Scout Group",
+      "links": []
+    },
+    {
+      "id": 5,
+      "name": "3D Design to Fabrication : A Journey with Autodesk Fusion",
+      "dates": "25 October, 2025",
+      "duration": "4 Hours",
+      "location": "DIU Robotics Lab, Daffodil International University",
+      "organizer": "DIU Robotics Lab",
+      "links": []
+    },
+    {
+      "id": 6,
+      "name": "6th Skill Development Course",
+      "dates": "8-12 January, 2026",
+      "duration": "5 Days",
+      "location": "Daffodil Smart City, Birulia, Savar, Dhaka-1216",
+      "organizer": "Bangladesh Scouts, Air Region supported by Daffodil International University Air Rover Scout Group",
+      "links": []
+    }
+  ]
+}
