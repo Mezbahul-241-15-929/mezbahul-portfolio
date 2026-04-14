@@ -1,0 +1,67 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Being Safe Online",
+      "duration": "1 hour",
+      "platform": "World Organization of the Scout Movement (WOSM)",
+      "provider": "World of scouting learning zone",
+      "link": "https://api-v4.skyprepapp.com",
+      "type": "Online"
+    },
+    {
+      "id": 2,
+      "name": "How to Start Your Rover Scout Program (Part-01)",
+      "duration": "1 hour",
+      "platform": "GoEdu",
+      "provider": "Nazmul Hasan",
+      "link": "https://goedu.com",
+      "type": "Online"
+    },
+    {
+      "id": 3,
+      "name": "Basic Fundamentals of Scouting",
+      "duration": "1.5 hour",
+      "platform": "GoEdu",
+      "provider": "Nazmul Hasan",
+      "link": "https://goedu.com",
+      "type": "Online"
+    },
+    {
+      "id": 4,
+      "name": "JOTA-JOTI 2024",
+      "duration": "October 18-20, 2024",
+      "platform": "World Organization of the Scout Movement (WOSM)",
+      "provider": "WOSM",
+      "link": "https://www.wosm.org",
+      "type": "Online"
+    },
+    {
+      "id": 5,
+      "name": "JOTA-JOTI 2025",
+      "duration": "October 17-19, 2025",
+      "platform": "World Organization of the Scout Movement (WOSM)",
+      "provider": "WOSM",
+      "link": "https://www.wosm.org",
+      "type": "Online"
+    },
+    {
+      "id": 6,
+      "name": "Microsoft Copilot - AgentX Bangladesh",
+      "duration": "2 hour",
+      "platform": "Netcom Learning",
+      "provider": "Netcom Learning",
+      "link": "https://netcomlearning.com",
+      "type": "Online"
+    },
+    {
+      "id": 7,
+      "name": "Web Development Course With Programming Hero",
+      "duration": "6 months",
+      "platform": "Programming Hero",
+      "provider": "Programming Hero",
+      "link": "https://programminghero.com",
+      "type": "Online"
+    }
+  ]
+}

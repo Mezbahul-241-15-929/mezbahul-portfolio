@@ -1,0 +1,76 @@
+{
+  "contests": [
+    {
+      "id": 1,
+      "name": "DIU Googling Contest - Spring 2024",
+      "link": "https://example.com/googling-contest",
+      "date": "27 April, 2024",
+      "duration": "2 Hour",
+      "description": "The DIU Googling Contest is a competition where students search answers on Google without using AI.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    },
+    {
+      "id": 2,
+      "name": "DIU Take-OFF Programming Contest Spring-24 [Preliminary - Mock]",
+      "link": "https://toph.co",
+      "date": "9 May, 2024",
+      "duration": "3 Hour",
+      "description": "DIU Take-OFF Programming Contest is a programming contest.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    },
+    {
+      "id": 3,
+      "name": "DIU Take-OFF Programming Contest - Spring 2024",
+      "link": "https://toph.co",
+      "date": "10 May, 2024",
+      "duration": "3 Hour",
+      "description": "DIU Take-OFF Programming Contest is a programming contest.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    },
+    {
+      "id": 4,
+      "name": "DIU Growing Star Program - Spring 2024",
+      "link": "https://facebook.com",
+      "date": "19 May, 2024",
+      "duration": "45 minute",
+      "description": "DIU Growing Star Program is an offline MCQ-based quiz.",
+      "organizer": "Daffodil International University"
+    },
+    {
+      "id": 5,
+      "name": "TypeTrek Face Off - Spring 2024",
+      "link": "https://facebook.com",
+      "date": "24 May, 2024",
+      "duration": "3 Minute Each Round",
+      "description": "TypeTrek Face Off is a keyboard typing contest.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    },
+    {
+      "id": 6,
+      "name": "Unlock The Algorithm Programming Contest - Spring 2025",
+      "link": "https://toph.co",
+      "date": "11 April, 2025",
+      "duration": "3 Hours",
+      "description": "Unlock The Algorithm Programming Contest is a programming contest.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    },
+    {
+      "id": 7,
+      "name": "DIU Unlock the Algorithm Programming Contest Summer-25 [Final]",
+      "link": "https://toph.co",
+      "date": "27 April, 2025",
+      "duration": "3 hours 30 minutes",
+      "description": "Unlock The Algorithm Programming Contest is a programming contest.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    },
+    {
+      "id": 8,
+      "name": "Prompt Battle Contest, Fall 2025",
+      "link": "https://promptbattle.com",
+      "date": "December 1, 2025",
+      "duration": "1 Hour",
+      "description": "Prompt Battle Contest is a competition where students provide answers using AI only.",
+      "organizer": "DIU Computer and Programming Club (CPC)"
+    }
+  ]
+}
