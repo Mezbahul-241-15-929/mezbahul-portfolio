@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Homepage from "./components/Homepage";
 import Aboutme from "./components/Aboutme";
+import SkillsSection from "./components/SkillsSection";
 
 export default function Home() {
   return (
@@ -46,36 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-            My <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Skills</span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { category: 'Frontend', skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
-              { category: 'Backend', skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL'] },
-              { category: 'Tools', skills: ['Git', 'Docker', 'VS Code', 'Figma'] },
-            ].map((skillGroup) => (
-              <div key={skillGroup.category} className="p-6 bg-linear-to-br from-gray-900 to-black border border-gray-800 rounded-lg hover:border-cyan-400/50 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">{skillGroup.category}</h3>
-                <div className="space-y-3">
-                  {skillGroup.skills.map((skill) => (
-                    <div key={skill} className="flex items-center justify-between">
-                      <span className="text-gray-300">{skill}</span>
-                      <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <div className="h-full bg-linear-to-r from-blue-500 to-cyan-500 rounded-full w-4/5"></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SkillsSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
