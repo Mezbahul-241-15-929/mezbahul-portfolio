@@ -2,6 +2,7 @@ import Image from "next/image";
 import Homepage from "./components/Homepage";
 import Aboutme from "./components/Aboutme";
 import SkillsSection from "./components/SkillsSection";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
@@ -49,43 +50,7 @@ export default function Home() {
 
       <SkillsSection />
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Let's <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Connect</span>
-          </h2>
-          
-          <p className="text-lg text-gray-300 mb-12">
-            I'm always open to new opportunities and interesting projects. Feel free to reach out!
-          </p>
-
-          <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-6 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-all duration-300"
-              />
-              <button className="px-8 py-3 bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
-                Send
-              </button>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-4 pt-8">
-              <button className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400/10 transition-all duration-300 font-medium">
-                LinkedIn
-              </button>
-              <button className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400/10 transition-all duration-300 font-medium">
-                GitHub
-              </button>
-              <button className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400/10 transition-all duration-300 font-medium">
-                Twitter
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
 
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm border-t border-gray-800">
