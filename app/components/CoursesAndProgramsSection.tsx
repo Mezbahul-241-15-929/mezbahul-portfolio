@@ -27,30 +27,44 @@ interface Course {
   links: Link[];
 }
 
+interface Contest {
+  id: number;
+  name: string;
+  date: string;
+  duration: string;
+  organizer: string;
+  link?: string;
+  description?: string;
+}
+
 const CoursesAndProgramsSection = () => {
   const [onlineCourses, setOnlineCourses] = useState<OnlineCourse[]>([]);
   const [programCourses, setProgramCourses] = useState<Course[]>([]);
+  const [contests, setContests] = useState<Contest[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'all' | 'online' | 'programs'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'online' | 'programs' | 'contests'>('all');
 
   React.useEffect(() => {
     const loadCourses = async () => {
       try {
-        const [onlineResponse, programResponse] = await Promise.all([
+        const [onlineResponse, programResponse, contestResponse] = await Promise.all([
           fetch('/data/online-courses.json'),
-          fetch('/data/courses.json')
+          fetch('/data/courses.json'),
+          fetch('/data/contests.json')
         ]);
 
-        if (!onlineResponse.ok || !programResponse.ok) {
+        if (!onlineResponse.ok || !programResponse.ok || !contestResponse.ok) {
           throw new Error('Failed to load courses');
         }
 
         const onlineData = await onlineResponse.json();
         const programData = await programResponse.json();
+        const contestData = await contestResponse.json();
 
         setOnlineCourses(onlineData.courses);
         setProgramCourses(programData.courses);
+        setContests(contestData.contests);
       } catch (err) {
         setError('Failed to load courses');
         console.error(err);
@@ -114,6 +128,16 @@ const CoursesAndProgramsSection = () => {
             }`}
           >
             🎓 Offline Programs
+          </button>
+          <button
+            onClick={() => setActiveTab('contests')}
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
+              activeTab === 'contests'
+                ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/50'
+                : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
+            }`}
+          >
+            🏆 Contests
           </button>
         </div>
 
@@ -417,13 +441,81 @@ const CoursesAndProgramsSection = () => {
                 </div>
               </div>
             )}
+
+            {/* Contests Tab */}
+            {activeTab === 'contests' && (
+              <div className="animate-fadeIn">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  {contests.map((contest) => (
+                    <div key={contest.id} className="group relative h-full">
+                      {/* Glow effect on hover */}
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
+
+                      {/* Card */}
+                      <div className="relative h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 hover:border-white/40 transition-all duration-300 flex flex-col">
+                        {/* Badge and Number */}
+                        <div className="mb-4 flex items-center justify-between">
+                          <span className="inline-block px-3 py-1 bg-orange-500/20 border border-orange-500/50 text-orange-300 text-xs font-semibold rounded-full">
+                            Contest
+                          </span>
+                          <div className="flex items-center justify-center h-8 w-8 rounded-full bg-orange-500/30 border border-orange-400 text-orange-300 text-xs font-bold">
+                            {String(contest.id).padStart(2, '0')}
+                          </div>
+                        </div>
+
+                        {/* Contest Title */}
+                        <h3 className="text-base sm:text-lg font-bold text-white mb-2 line-clamp-3 group-hover:text-orange-300 transition-colors duration-300 flex-grow">
+                          {contest.name}
+                        </h3>
+
+                        {/* Contest Details */}
+                        <div className="space-y-2 mb-4 text-sm">
+                          {/* Date */}
+                          <div className="flex items-start gap-3">
+                            <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <div>
+                              <p className="text-gray-400 text-xs">Date</p>
+                              <p className="text-gray-200 font-medium">{contest.date}</p>
+                            </div>
+                          </div>
+
+                          {/* Duration */}
+                          <div className="flex items-start gap-3">
+                            <svg className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                              <p className="text-gray-400 text-xs">Duration</p>
+                              <p className="text-gray-200 font-medium">{contest.duration}</p>
+                            </div>
+                          </div>
+
+                          {/* Organizer */}
+                          <div className="flex items-start gap-3">
+                            <svg className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <div>
+                              <p className="text-gray-400 text-xs">Organizer</p>
+                              <p className="text-gray-200 font-medium line-clamp-2">{contest.organizer}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </>
         )}
 
         {/* Footer Stats Section */}
         <div className="mt-16 pt-12 border-t border-white/10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {/* Total Courses */}
+            {/* Online Courses */}
             <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
                 {onlineCourses.length}
@@ -432,13 +524,22 @@ const CoursesAndProgramsSection = () => {
               <p className="text-gray-400 text-sm">Completed across platforms</p>
             </div>
 
-            {/* Total Programs */}
+            {/* Offline Programs */}
             <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-purple-500/20 rounded-xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
                 {programCourses.length}
               </div>
               <p className="text-gray-300 font-semibold mb-1">Offline Programs</p>
               <p className="text-gray-400 text-sm">Professional certifications</p>
+            </div>
+
+            {/* Contests */}
+            <div className="bg-gradient-to-br from-orange-500/10 to-yellow-500/5 border border-orange-500/20 rounded-xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent mb-2">
+                {contests.length}
+              </div>
+              <p className="text-gray-300 font-semibold mb-1">Contests</p>
+              <p className="text-gray-400 text-sm">Programming competitions</p>
             </div>
 
             {/* Total Learning */}
@@ -453,13 +554,13 @@ const CoursesAndProgramsSection = () => {
             {/* Certifications */}
             <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 rounded-xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-green-500/40 transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-2">
-                13
+                17
               </div>
               <p className="text-gray-300 font-semibold mb-1">Certifications</p>
               <p className="text-gray-400 text-sm">Professional credentials</p>
             </div>
 
-            {/* Years of Learning */}
+            {/* Years Experience */}
             <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/5 border border-orange-500/20 rounded-xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent mb-2">
                 2+
@@ -477,7 +578,14 @@ const CoursesAndProgramsSection = () => {
               <p className="text-gray-400 text-sm">Technical & professional</p>
             </div>
 
-
+            {/* Total Achievements */}
+            <div className="bg-gradient-to-br from-rose-500/10 to-fuchsia-500/5 border border-rose-500/20 rounded-xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-rose-500/40 transition-all duration-300">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-rose-400 to-fuchsia-500 bg-clip-text text-transparent mb-2">
+                38
+              </div>
+              <p className="text-gray-300 font-semibold mb-1">Total Achievements</p>
+              <p className="text-gray-400 text-sm">Combined learning journey</p>
+            </div>
           </div>
         </div>
       </div>
