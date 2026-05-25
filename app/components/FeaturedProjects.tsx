@@ -1,14 +1,63 @@
-export default function FeaturedProjects() {
-  return (
-    <section id="projects" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-          Featured <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Projects</span>
-        </h2>
+'use client';
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+import { motion } from 'framer-motion';
+
+export default function FeaturedProjects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  return (
+    <motion.section 
+      id="projects" 
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Featured <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Projects</span>
+        </motion.h2>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {[1, 2, 3].map((item) => (
-            <div key={item} className="group relative bg-black border border-gray-800 rounded-lg overflow-hidden hover:border-cyan-400/50 transition-all duration-300">
+            <motion.div 
+              key={item} 
+              className="group relative bg-black border border-gray-800 rounded-lg overflow-hidden hover:border-cyan-400/50 transition-all duration-300"
+              variants={cardVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="absolute inset-0 bg-linear-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:to-cyan-500/10 transition-all duration-300"></div>
               
               <div className="relative p-6 h-full flex flex-col">
@@ -30,10 +79,10 @@ export default function FeaturedProjects() {
                   View Project
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

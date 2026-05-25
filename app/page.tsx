@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <>
 
-    <Homepage />
-    <Aboutme />
+      <Homepage />
+      <Aboutme />
 
-    <FeaturedProjects />
+      <FeaturedProjects />
 
-    <SkillsSection />
+      <SkillsSection />
 
       <CoursesAndProgramsSection />
 

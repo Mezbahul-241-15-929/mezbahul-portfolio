@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Mail, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,12 +21,27 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative px-4 sm:px-6 lg:px-8 py-8">
+    <motion.footer 
+      className="relative px-4 sm:px-6 lg:px-8 py-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="bg-black/40 backdrop-blur-lg rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg p-8">
+        <motion.div 
+          className="bg-black/40 backdrop-blur-lg rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg p-8"
+          whileHover={{ borderColor: 'rgba(255,255,255,0.3)' }}
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand Section */}
-            <div className="flex flex-col">
+            <motion.div 
+              className="flex flex-col"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <Link href="/" className="flex items-center shrink-0 mb-4">
                 <span className="text-xl sm:text-2xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   Portfolio
@@ -34,10 +50,16 @@ export default function Footer() {
               <p className="text-gray-400 text-sm">
                 Building amazing digital experiences with modern technologies.
               </p>
-            </div>
+            </motion.div>
 
             {/* Quick Links */}
-            <div className="flex flex-col">
+            <motion.div 
+              className="flex flex-col"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-white font-semibold mb-4">Quick Links</h3>
               <div className="space-y-2">
                 {footerLinks.map((link) => (
@@ -51,56 +73,76 @@ export default function Footer() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="flex flex-col">
+            <motion.div 
+              className="flex flex-col"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-white font-semibold mb-4">Connect</h3>
               <div className="flex gap-4">
-                {socialLinks.map((social) => {
+                {socialLinks.map((social, index) => {
                   if ('icon' in social && social.icon) {
                     const Icon = social.icon;
                     return (
-                      <a
+                      <motion.a
                         key={social.label}
                         href={social.href}
                         aria-label={social.label}
                         className="h-10 w-10 rounded-lg bg-blue-500/20 border border-blue-400 text-blue-300 flex items-center justify-center hover:bg-blue-500/40 hover:border-blue-300 transition-all duration-300"
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <Icon className="h-5 w-5" />
-                      </a>
+                      </motion.a>
                     );
                   } else {
                     return (
-                      <a
+                      <motion.a
                         key={social.label}
                         href={social.href}
                         aria-label={social.label}
                         className="h-10 w-10 rounded-lg bg-blue-500/20 border border-blue-400 text-blue-300 flex items-center justify-center hover:bg-blue-500/40 hover:border-blue-300 transition-all duration-300 font-bold text-xs"
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         {social.name?.[0]}
-                      </a>
+                      </motion.a>
                     );
                   }
                 })}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Divider */}
           <div className="my-8 border-t border-gray-800"></div>
 
           {/* Bottom Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <motion.div 
+            className="flex flex-col sm:flex-row justify-between items-center gap-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             <p className="text-gray-400 text-sm">
               &copy; {currentYear} Your Name. All rights reserved.
             </p>
-            <button className="px-6 py-2 bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 text-sm">
+            <motion.button 
+              className="px-6 py-2 bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 text-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Get in Touch
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

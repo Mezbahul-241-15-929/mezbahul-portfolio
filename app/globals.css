@@ -1,6 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap');
 @import "tailwindcss";
 
+/* Smooth Scrolling Behavior */
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  scroll-behavior: smooth !important;
+}
+
+/* Link scroll smooth */
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
 .font-playfair {
   font-family: 'Sora', sans-serif;
 }

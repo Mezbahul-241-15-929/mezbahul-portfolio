@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface Link {
   text: string;
@@ -77,7 +78,14 @@ const CoursesAndProgramsSection = () => {
   }, []);
 
   return (
-    <section id="learning" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden">
+    <motion.section 
+      id="learning" 
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full mix-blend-screen blur-3xl"></div>
@@ -87,7 +95,13 @@ const CoursesAndProgramsSection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">LEARNING JOURNEY</p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-white">
             Courses, Programs &amp; <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Contests</span>
@@ -95,51 +109,65 @@ const CoursesAndProgramsSection = () => {
           <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Expanding knowledge through structured learning, professional programs, and continuous development
           </p>
-        </div>
+        </motion.div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center mb-12 gap-3 sm:gap-4">
-          <button
+        <motion.div 
+          className="flex flex-wrap justify-center mb-12 gap-3 sm:gap-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
             onClick={() => setActiveTab('all')}
             className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'all'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
             }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             ✨ All
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => setActiveTab('online')}
             className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'online'
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
             }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             📚 Online Courses
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => setActiveTab('programs')}
             className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'programs'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
             }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             🎓 Offline Programs
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => setActiveTab('contests')}
             className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'contests'
                 ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
             }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             🏆 Contests
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Content */}
         {isLoading ? (
@@ -154,11 +182,30 @@ const CoursesAndProgramsSection = () => {
           <>
             {/* All Tab */}
             {activeTab === 'all' && (
-              <div className="animate-fadeIn">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <motion.div 
+                className="animate-fadeIn"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                  viewport={{ once: true }}
+                >
                   {/* Online Courses */}
                   {onlineCourses.map((course) => (
-                    <div key={`online-${course.id}`} className="group relative h-full">
+                    <motion.div 
+                      key={`online-${course.id}`} 
+                      className="group relative h-full"
+                      variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {/* Glow effect on hover */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
 
@@ -215,12 +262,18 @@ const CoursesAndProgramsSection = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
 
                   {/* Programs */}
                   {programCourses.map((course) => (
-                    <div key={`program-${course.id}`} className="group relative h-full">
+                    <motion.div 
+                      key={`program-${course.id}`} 
+                      className="group relative h-full"
+                      variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {/* Glow effect on hover */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
 
@@ -289,12 +342,18 @@ const CoursesAndProgramsSection = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
 
                   {/* Contests */}
                   {contests.map((contest) => (
-                    <div key={`contest-${contest.id}`} className="group relative h-full">
+                    <motion.div 
+                      key={`contest-${contest.id}`} 
+                      className="group relative h-full"
+                      variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {/* Glow effect on hover */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
 
@@ -351,18 +410,37 @@ const CoursesAndProgramsSection = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             )}
 
             {/* Online Courses Tab */}
             {activeTab === 'online' && (
-              <div className="animate-fadeIn">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <motion.div 
+                className="animate-fadeIn"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                  viewport={{ once: true }}
+                >
                   {onlineCourses.map((course) => (
-                    <div key={course.id} className="group relative h-full">
+                    <motion.div 
+                      key={course.id} 
+                      className="group relative h-full"
+                      variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {/* Glow effect on hover */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
 
@@ -418,18 +496,37 @@ const CoursesAndProgramsSection = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             )}
 
             {/* Programs Tab */}
             {activeTab === 'programs' && (
-              <div className="animate-fadeIn">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <motion.div 
+                className="animate-fadeIn"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                  viewport={{ once: true }}
+                >
                   {programCourses.map((course) => (
-                    <div key={course.id} className="group relative h-full">
+                    <motion.div 
+                      key={course.id} 
+                      className="group relative h-full"
+                      variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {/* Glow effect on hover */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
 
@@ -498,18 +595,37 @@ const CoursesAndProgramsSection = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             )}
 
             {/* Contests Tab */}
             {activeTab === 'contests' && (
-              <div className="animate-fadeIn">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <motion.div 
+                className="animate-fadeIn"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                  viewport={{ once: true }}
+                >
                   {contests.map((contest) => (
-                    <div key={contest.id} className="group relative h-full">
+                    <motion.div 
+                      key={contest.id} 
+                      className="group relative h-full"
+                      variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {/* Glow effect on hover */}
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 blur-md -z-10"></div>
 
@@ -566,90 +682,143 @@ const CoursesAndProgramsSection = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             )}
           </>
         )}
 
         {/* Footer Stats Section */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 lg:gap-4">
+        <motion.div 
+          className="mt-12 pt-8 border-t border-white/10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 lg:gap-4"
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ staggerChildren: 0.08, delayChildren: 0.2 }}
+            viewport={{ once: true }}
+          >
             {/* Online Courses */}
-            <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">
                 {onlineCourses.length}
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Online</p>
               <p className="text-gray-400 text-xs hidden sm:block">Courses</p>
-            </div>
+            </motion.div>
 
             {/* Offline Programs */}
-            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-purple-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-purple-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">
                 {programCourses.length}
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Offline</p>
               <p className="text-gray-400 text-xs hidden sm:block">Programs</p>
-            </div>
+            </motion.div>
 
             {/* Contests */}
-            <div className="bg-gradient-to-br from-orange-500/10 to-yellow-500/5 border border-orange-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-orange-500/10 to-yellow-500/5 border border-orange-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent mb-1">
                 {contests.length}
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Contests</p>
               <p className="text-gray-400 text-xs hidden sm:block">Done</p>
-            </div>
+            </motion.div>
 
             {/* Total Learning */}
-            <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/5 border border-indigo-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-indigo-500/10 to-purple-500/5 border border-indigo-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent mb-1">
                 {onlineCourses.length + programCourses.length}
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Total</p>
               <p className="text-gray-400 text-xs hidden sm:block">Learning</p>
-            </div>
+            </motion.div>
 
             {/* Certifications */}
-            <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-green-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-green-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-1">
                 17
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Certs</p>
               <p className="text-gray-400 text-xs hidden sm:block">Certificate</p>
-            </div>
+            </motion.div>
 
             {/* Years Experience */}
-            <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/5 border border-orange-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-orange-500/10 to-amber-500/5 border border-orange-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent mb-1">
                 2+
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Years</p>
               <p className="text-gray-400 text-xs hidden sm:block">Experience</p>
-            </div>
+            </motion.div>
 
             {/* Skills Acquired */}
-            <div className="bg-gradient-to-br from-red-500/10 to-pink-500/5 border border-red-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-red-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-red-500/10 to-pink-500/5 border border-red-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-red-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent mb-1">
                 22+
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Skills</p>
               <p className="text-gray-400 text-xs hidden sm:block">Tech</p>
-            </div>
+            </motion.div>
 
             {/* Hours of Learning */}
-            <div className="bg-gradient-to-br from-rose-500/10 to-fuchsia-500/5 border border-rose-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-rose-500/40 transition-all duration-300">
+            <motion.div 
+              className="bg-gradient-to-br from-rose-500/10 to-fuchsia-500/5 border border-rose-500/20 rounded-lg p-3 sm:p-4 lg:p-6 text-center backdrop-blur-sm hover:border-rose-500/40 transition-all duration-300"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-rose-400 to-fuchsia-500 bg-clip-text text-transparent mb-1">
                 200+
               </div>
               <p className="text-gray-300 font-semibold text-xs sm:text-sm mb-0.5">Hours</p>
               <p className="text-gray-400 text-xs hidden sm:block">Learning</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <style jsx>{`
@@ -665,7 +834,7 @@ const CoursesAndProgramsSection = () => {
           animation: fadeIn 0.3s ease-in-out;
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 };
 

@@ -2,8 +2,28 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const SkillsSection = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05,
+                delayChildren: 0.2,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.4 },
+        },
+    };
     const skills = [
         { name: 'C', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
         { name: 'C++', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
@@ -30,7 +50,14 @@ const SkillsSection = () => {
     ];
 
     return (
-        <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden">
+        <motion.section 
+            id="skills" 
+            className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+        >
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full mix-blend-screen blur-3xl"></div>
@@ -38,19 +65,34 @@ const SkillsSection = () => {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center mb-16">
+                <motion.div 
+                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                >
                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">MY SKILLSET</p>
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-white">
                         The Magic <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Behind</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Skills Container - Horizontal Layout */}
-                <div className="flex flex-wrap gap-3 sm:gap-4 justify-center max-w-3xl mx-auto">
+                <motion.div 
+                    className="flex flex-wrap gap-3 sm:gap-4 justify-center max-w-3xl mx-auto"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
                     {skills.map((skill, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             className="group relative"
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             {/* Skill Badge - Glass Morphism */}
                             <div className="flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl border border-white/35 bg-white/10 backdrop-blur-sm hover:bg-white/25 hover:border-white/50 transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg shine-effect">
@@ -70,11 +112,11 @@ const SkillsSection = () => {
                                     {skill.name}
                                 </span>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

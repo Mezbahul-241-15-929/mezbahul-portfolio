@@ -1,19 +1,41 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Aboutme = () => {
     return (
         <div>
             {/* About Section */}
-            <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative">
+            <motion.section 
+                id="about" 
+                className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+            >
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-16 pb-4">
+                    <motion.h2 
+                        className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-16 pb-4"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
                         About <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Me</span>
                         <div className="h-1 w-24 bg-linear-to-r from-blue-400 to-cyan-400 mt-4"></div>
-                    </h2>
+                    </motion.h2>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Bio and Profile Card - Left Side */}
-                        <div className="lg:col-span-1 space-y-6">
+                        <motion.div 
+                            className="lg:col-span-1 space-y-6"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
                             {/* Profile Card */}
                             <div className="flex flex-col items-center justify-start">
                                 <div className="relative w-48 h-48 mb-6 group">
@@ -60,10 +82,16 @@ const Aboutme = () => {
                                     Download Resume
                                 </button>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Education Section - Right Side (Decreased Width) */}
-                        <div className="lg:col-span-1">
+                        <motion.div 
+                            className="lg:col-span-1"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
                             {/* Education Section */}
                             <div className="bg-black/50 border border-blue-400/30 rounded-2xl p-8 hover:border-blue-400/60 transition-all duration-300">
                                 <div className="flex items-center gap-3 mb-6">
@@ -93,10 +121,10 @@ const Aboutme = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </div>
     );
 };

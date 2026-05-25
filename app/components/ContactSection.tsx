@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -87,7 +88,14 @@ const ContactSection = () => {
     ];
 
     return (
-        <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden">
+        <motion.section 
+            id="contact" 
+            className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+        >
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-10 left-20 w-80 h-80 bg-pink-500/10 rounded-full mix-blend-screen blur-3xl"></div>
@@ -98,19 +106,37 @@ const ContactSection = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">GET IN TOUCH</p>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
+                    <motion.h2 
+                        className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
                         <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Connect</span>
-                    </h2>
+                    </motion.h2>
 
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <motion.div 
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                    viewport={{ once: true }}
+                >
                     {/* Contact Information Cards */}
                     {contactInfo.map((info, index) => (
-                        <a
+                        <motion.a
                             key={index}
                             href={info.link}
                             className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20"
+                            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                            initial="hidden"
+                            whileInView="visible"
+                            whileHover={{ y: -5 }}
+                            transition={{ duration: 0.3 }}
+                            viewport={{ once: true }}
                         >
                             {/* Background glow */}
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 rounded-2xl transition-all duration-300"></div>
@@ -122,14 +148,20 @@ const ContactSection = () => {
                                     {info.value}
                                 </p>
                             </div>
-                        </a>
+                        </motion.a>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Main Contact Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Contact Form */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300">
+                    <motion.div 
+                        className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
                         <h3 className="text-2xl font-bold text-white mb-8">Send Me a Message</h3>
 
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -197,12 +229,22 @@ const ContactSection = () => {
                                 Send Message
                             </button>
                         </form>
-                    </div>
+                    </motion.div>
 
                     {/* Quick Info & Social Links */}
-                    <div className="space-y-8">
+                    <motion.div 
+                        className="space-y-8"
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
                         {/* Why Connect Card */}
-                        <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300">
+                        <motion.div 
+                            className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300"
+                            whileHover={{ y: -5 }}
+                            transition={{ duration: 0.3 }}
+                        >
                             <h3 className="text-2xl font-bold text-white mb-6">Why Reach Out?</h3>
                             
                             <div className="space-y-4">
@@ -238,40 +280,60 @@ const ContactSection = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Social Links */}
-                        <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300">
+                        <motion.div 
+                            className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-white/40 transition-all duration-300"
+                            whileHover={{ y: -5 }}
+                            transition={{ duration: 0.3 }}
+                        >
                             <h3 className="text-2xl font-bold text-white mb-6">Connect on Social Media</h3>
                             
-                            <div className="grid grid-cols-2 gap-4">
+                            <motion.div 
+                                className="grid grid-cols-2 gap-4"
+                                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                                initial="hidden"
+                                whileInView="visible"
+                                transition={{ staggerChildren: 0.1 }}
+                                viewport={{ once: true }}
+                            >
                                 {socialLinks.map((social, index) => (
-                                    <a
+                                    <motion.a
                                         key={index}
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="group flex items-center gap-3 p-4 bg-white/5 border border-white/20 rounded-lg hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
+                                        variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1 } }}
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
                                     >
                                         <div className="group-hover:scale-110 transition-all duration-300">
                                             {social.icon}
                                         </div>
                                         <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300">{social.name}</span>
-                                    </a>
+                                    </motion.a>
                                 ))}
-                            </div>
-                        </div>
-                    </div>
+                            </motion.div>
+                        </motion.div>
+                    </motion.div>
                 </div>
 
                 {/* Response Time Banner */}
-                <div className="mt-12 p-6 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/50 rounded-xl text-center">
+                <motion.div 
+                    className="mt-12 p-6 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/50 rounded-xl text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                >
                     <p className="text-gray-200">
                         <span className="font-bold text-white">⏱️ Response Time:</span> I typically get back to you within 24 hours during business days.
                     </p>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 
