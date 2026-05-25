@@ -2,6 +2,8 @@ import Image from "next/image";
 import Homepage from "./components/Homepage";
 import Aboutme from "./components/Aboutme";
 import SkillsSection from "./components/SkillsSection";
+import OnlineCoursesSection from "./components/OnlineCoursesSection";
+import ProgramOrCourseSection from "./components/ProgramOrCourseSection";
 import ContactSection from "./components/ContactSection";
 
 export default function Home() {
@@ -49,6 +51,10 @@ export default function Home() {
       </section>
 
       <SkillsSection />
+
+      <OnlineCoursesSection />
+
+      <ProgramOrCourseSection />
 
       <ContactSection />
 

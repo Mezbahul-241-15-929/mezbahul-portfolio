@@ -79,8 +79,8 @@ const ContactSection = () => {
             name: 'Email',
             url: 'mailto:mazbahulislammeraj@gmail.com',
             icon: (
-                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                    <path fill="#EA4335" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
             )
         }
@@ -99,11 +99,9 @@ const ContactSection = () => {
                 <div className="text-center mb-16">
                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">GET IN TOUCH</p>
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
-                        Let's <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Connect</span>
+                        <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Connect</span>
                     </h2>
-                    <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                        I'm always open to new opportunities and interesting projects. Whether you have a question or want to collaborate, feel free to reach out!
-                    </p>
+
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
