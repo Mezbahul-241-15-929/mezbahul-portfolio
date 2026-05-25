@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Homepage = () => {
     return (
@@ -23,9 +24,11 @@ const Homepage = () => {
                                     
                                     {/* Inner content */}
                                     <div className="relative bg-black rounded-3xl overflow-hidden w-full h-full">
-                                        <img
+                                        <Image
                                             src="/Profile.JPG"
                                             alt="Profile"
+                                            width={500}
+                                            height={500}
                                             className="w-full h-full rounded-3xl object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
                                     </div>
@@ -37,7 +40,7 @@ const Homepage = () => {
                         <div className="relative z-10 flex flex-col justify-center items-center lg:items-start space-y-8 order-last lg:order-first text-center lg:text-left">
                             <div>
                                 <p className="text-blue-400 text-lg lg:text-xl font-medium mb-2">Hi, I am</p>
-                                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
+                                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2 font-playfair">
                                     Mezbahul
                                 </h1>
                                 <p className="text-3xl sm:text-4xl lg:text-5xl text-cyan-400 font-semibold">
