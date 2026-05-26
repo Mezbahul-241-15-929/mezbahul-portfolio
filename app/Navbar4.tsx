@@ -2,10 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-// import Navbar2 from './Navbar2';
-// import Navbar3 from './Navbar3';
 
-export default function Navbar() {
+export default function Navbar4() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
 
@@ -166,22 +164,6 @@ export default function Navbar() {
         </div>
       )}
       </nav>
-
-      {/* <Navbar2
-        isOpen={isOpen}
-        activeSection={activeSection}
-        toggleMenu={toggleMenu}
-        handleNavLinkClick={handleNavLinkClick}
-        handleLogoClick={handleLogoClick}
-      /> */}
-
-      {/* <Navbar3
-        isOpen={isOpen}
-        activeSection={activeSection}
-        toggleMenu={toggleMenu}
-        handleNavLinkClick={handleNavLinkClick}
-        handleLogoClick={handleLogoClick}
-      /> */}
     </>
   );
 }

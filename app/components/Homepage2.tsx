@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const Homepage = () => {
+const Homepage2 = () => {
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -37,7 +37,7 @@ const Homepage = () => {
     return (
         <div>
             {/* Hero Section */}
-            <motion.section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 py-4">
+            <motion.section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 py-4">
                 <div className="max-w-7xl mx-auto w-full px-0 sm:px-4 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:items-center auto-rows-max lg:auto-rows-auto">
                         {/* Right side - Photo (Vertical Order on Mobile) */}
@@ -48,16 +48,16 @@ const Homepage = () => {
                             animate="visible"
                         >
                             <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-full lg:h-auto lg:max-w-md group">
-                                {/* Animated neon blue glow effect */}
-                                <div className="absolute inset-0 bg-linear-to-r from-blue-400 via-blue-500 to-blue-400 rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 group-hover:blur-3xl transition-all duration-500"></div>
+                                {/* Animated neon purple glow effect */}
+                                <div className="absolute inset-0 bg-linear-to-r from-purple-400 via-purple-500 to-purple-400 rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 group-hover:blur-3xl transition-all duration-500"></div>
                                 
-                                {/* Secondary neon blue glow layer */}
-                                <div className="absolute inset-0 bg-linear-to-b from-blue-400/30 to-blue-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                                {/* Secondary neon purple glow layer */}
+                                <div className="absolute inset-0 bg-linear-to-b from-purple-400/30 to-pink-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-                                {/* Photo container with blue border */}
-                                <div className="relative bg-blue-500 p-1.5 rounded-3xl overflow-hidden w-full h-full shadow-2xl shadow-blue-500/30 group-hover:shadow-blue-500/60 transition-all duration-500">
+                                {/* Photo container with purple border */}
+                                <div className="relative bg-purple-500 p-1.5 rounded-3xl overflow-hidden w-full h-full shadow-2xl shadow-purple-500/30 group-hover:shadow-purple-500/60 transition-all duration-500">
                                     {/* Gradient border */}
-                                    <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-purple-400 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     
                                     {/* Inner content */}
                                     <div className="relative bg-black rounded-3xl overflow-hidden w-full h-full">
@@ -81,11 +81,11 @@ const Homepage = () => {
                             animate="visible"
                         >
                             <motion.div variants={itemVariants}>
-                                <p className="text-blue-400 text-lg lg:text-xl font-medium mb-2">Hi, I am</p>
+                                <p className="text-purple-400 text-lg lg:text-xl font-medium mb-2">Hi, I am</p>
                                 <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2 font-playfair">
                                     Mezbahul
                                 </h1>
-                                <p className="text-3xl sm:text-4xl lg:text-5xl text-cyan-400 font-semibold">
+                                <p className="text-3xl sm:text-4xl lg:text-5xl text-pink-400 font-semibold">
                                     Web Developer
                                 </p>
                             </motion.div>
@@ -100,7 +100,7 @@ const Homepage = () => {
                                     href="https://facebook.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400/20 transition-all duration-300"
+                                    className="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full border border-pink-400 text-pink-400 hover:bg-pink-400/20 transition-all duration-300"
                                     whileHover={{ scale: 1.15, rotate: 5 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
@@ -112,7 +112,7 @@ const Homepage = () => {
                                     href="https://github.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400/20 transition-all duration-300"
+                                    className="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full border border-pink-400 text-pink-400 hover:bg-pink-400/20 transition-all duration-300"
                                     whileHover={{ scale: 1.15, rotate: 5 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
@@ -124,7 +124,7 @@ const Homepage = () => {
                                     href="https://linkedin.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400/20 transition-all duration-300"
+                                    className="w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full border border-pink-400 text-pink-400 hover:bg-pink-400/20 transition-all duration-300"
                                     whileHover={{ scale: 1.15, rotate: 5 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
@@ -139,8 +139,8 @@ const Homepage = () => {
                                 <motion.a
                                     href="/cv.pdf"
                                     download
-                                    className="inline-flex items-center gap-2 px-8 py-3 lg:px-10 lg:py-4 lg:text-lg bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-                                    whileHover={{ scale: 1.08, boxShadow: "0 0 30px rgba(34, 211, 238, 0.6)" }}
+                                    className="inline-flex items-center gap-2 px-8 py-3 lg:px-10 lg:py-4 lg:text-lg bg-linear-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-pink-500/50 transition-all duration-300"
+                                    whileHover={{ scale: 1.08, boxShadow: "0 0 30px rgba(244, 114, 182, 0.6)" }}
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,4 +159,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default Homepage2;

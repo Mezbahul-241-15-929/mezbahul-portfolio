@@ -4,10 +4,12 @@
 /* Smooth Scrolling Behavior */
 html {
   scroll-behavior: smooth !important;
+  overflow-x: hidden;
 }
 
 body {
   scroll-behavior: smooth !important;
+  overflow-x: hidden;
 }
 
 /* Link scroll smooth */
