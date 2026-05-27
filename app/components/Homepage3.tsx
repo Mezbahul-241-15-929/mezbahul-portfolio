@@ -62,7 +62,7 @@ const Homepage3 = () => {
                                     {/* Inner content */}
                                     <div className="relative bg-black rounded-3xl overflow-hidden w-full h-full">
                                         <Image
-                                            src="/Profile.JPG"
+                                            src="/Profile.png"
                                             alt="Profile"
                                             width={500}
                                             height={500}

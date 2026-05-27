@@ -45,7 +45,7 @@ const Aboutme = () => {
                                     {/* Profile image */}
                                     <div className="relative bg-blue-500 p-1.5 rounded-full overflow-hidden w-full h-full">
                                         <img
-                                            src="/Profile.JPG"
+                                            src="/Profile.png"
                                             alt="Profile"
                                             className="w-full h-full rounded-full object-cover"
                                         />
