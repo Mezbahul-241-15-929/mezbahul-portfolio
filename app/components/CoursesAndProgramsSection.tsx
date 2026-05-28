@@ -121,7 +121,7 @@ const CoursesAndProgramsSection = () => {
         >
           <motion.button
             onClick={() => setActiveTab('all')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
               activeTab === 'all'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
@@ -133,7 +133,7 @@ const CoursesAndProgramsSection = () => {
           </motion.button>
           <motion.button
             onClick={() => setActiveTab('online')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
               activeTab === 'online'
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
@@ -145,7 +145,7 @@ const CoursesAndProgramsSection = () => {
           </motion.button>
           <motion.button
             onClick={() => setActiveTab('programs')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
               activeTab === 'programs'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
@@ -157,7 +157,7 @@ const CoursesAndProgramsSection = () => {
           </motion.button>
           <motion.button
             onClick={() => setActiveTab('contests')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 ${
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
               activeTab === 'contests'
                 ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'

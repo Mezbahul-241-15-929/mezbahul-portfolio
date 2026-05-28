@@ -1,0 +1,132 @@
+{
+  "program": "DIU CSE",
+  "completedCourses": [
+    {
+      "term": "L1 T2 (Fall 2024)",
+      "courses": [
+        {
+          "sl": 1,
+          "courseCode": "ENG102",
+          "courseTitle": "Writing and Comprehension",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_Q",
+          "teacher": "Abir Saha"
+        },
+        {
+          "sl": 2,
+          "courseCode": "MAT102",
+          "courseTitle": "Mathematics-II: Calculus, Complex Variables and Linear Algebra",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_Q",
+          "teacher": "Nahid Sultana"
+        },
+        {
+          "sl": 3,
+          "courseCode": "PHY102",
+          "courseTitle": "Physics - II",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_Q",
+          "teacher": "Md. Shamim Hossain"
+        },
+        {
+          "sl": 4,
+          "courseCode": "PHY103",
+          "courseTitle": "Physics - II Lab",
+          "credit": 1.5,
+          "type": "REGULAR",
+          "section": "66_Q1",
+          "teacher": "Md. Shamim Hossain"
+        },
+        {
+          "sl": 5,
+          "courseCode": "CSE121",
+          "courseTitle": "Electrical Circuits",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_Q",
+          "teacher": "Ms. Farjana Akter"
+        },
+        {
+          "sl": 6,
+          "courseCode": "CSE122",
+          "courseTitle": "Electrical Circuits Lab",
+          "credit": 1.5,
+          "type": "REGULAR",
+          "section": "66_Q1",
+          "teacher": "Ms. Farjana Akter"
+        },
+        {
+          "sl": 7,
+          "courseCode": "CSE123",
+          "courseTitle": "Data Structure",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_Q",
+          "teacher": "Sadia Jannat Mitu"
+        },
+        {
+          "sl": 8,
+          "courseCode": "CSE124",
+          "courseTitle": "Data Structure Lab",
+          "credit": 1.5,
+          "type": "REGULAR",
+          "section": "66_Q1",
+          "teacher": "Sadia Jannat Mitu"
+        }
+      ]
+    },
+    {
+      "term": "L2 T1 (Spring 2025)",
+      "courses": [
+        {
+          "sl": 1,
+          "courseCode": "CSE212",
+          "courseTitle": "Discrete Mathematics",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_P",
+          "teacher": "Mohammad Monirul Islam"
+        },
+        {
+          "sl": 2,
+          "courseCode": "CSE213",
+          "courseTitle": "Algorithms",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_P",
+          "teacher": "Md. Ferdouse Ahmed Foysal"
+        },
+        {
+          "sl": 3,
+          "courseCode": "CSE214",
+          "courseTitle": "Algorithms Lab",
+          "credit": 1.5,
+          "type": "REGULAR",
+          "section": "66_P1",
+          "teacher": "Sadia Jannat Mitu"
+        },
+        {
+          "sl": 4,
+          "courseCode": "MAT211",
+          "courseTitle": "Engineering Mathematics",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_P",
+          "teacher": "Noor Muhammad"
+        },
+        {
+          "sl": 5,
+          "courseCode": "BNS101",
+          "courseTitle": "Bangladesh Studies (History of Independence and Contemporary Issues)",
+          "credit": 3,
+          "type": "REGULAR",
+          "section": "66_P",
+          "teacher": "Shanjida Habib Swarna"
+        }
+      ]
+    }
+  ]
+}
