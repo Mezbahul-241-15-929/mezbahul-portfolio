@@ -1,5 +1,6 @@
 import Homepage from "./components/Homepage";
 import Aboutme from "./components/Aboutme";
+import AcademicActivity from "./components/AcademicActivity";
 import FeaturedProjects from "./components/FeaturedProjects";
 import SkillsSection from "./components/SkillsSection";
 import CoursesAndProgramsSection from "./components/CoursesAndProgramsSection";
@@ -15,6 +16,8 @@ export default function Home() {
       {/* <Homepage2 /> */}
       {/* <Homepage3 /> */}
       <Aboutme />
+
+      <AcademicActivity />
 
       <FeaturedProjects />
 
