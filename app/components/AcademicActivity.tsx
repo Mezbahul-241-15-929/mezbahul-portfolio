@@ -15,6 +15,7 @@ type Course = {
 
 type TermGroup = {
   term: string;
+  termMobile?: string;
   courses: Course[];
 };
 
@@ -163,7 +164,7 @@ const AcademicActivity = () => {
                       <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-cyan-500/30 border border-cyan-400 text-cyan-300 text-sm font-bold">{termIndex + 1}</div>
                         <div className="text-sm sm:text-base text-white font-semibold">
-                          <span className="sm:hidden">{(term as any).termMobile ?? term.term}</span>
+                          <span className="sm:hidden">{term.termMobile ?? term.term}</span>
                           <span className="hidden sm:inline">{term.term}</span>
                         </div>
                       </div>
