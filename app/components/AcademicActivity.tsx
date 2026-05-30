@@ -169,7 +169,7 @@ const AcademicActivity = () => {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="text-xs sm:text-sm text-gray-300">{term.courses.reduce((sum, c) => sum + c.credit, 0)} Total Credits</div>
+                        <div className="text-xs sm:text-sm text-gray-300">{term.courses.reduce((sum, c) => sum + c.credit, 0).toFixed(1)} Total Credits</div>
                         <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }} className="text-gray-300">▼</motion.span>
                       </div>
                     </div>
@@ -212,7 +212,7 @@ const AcademicActivity = () => {
                                         <td className="px-2 py-2 sm:px-3 sm:py-3 text-xs text-gray-200">{course.courseTitle}</td>
                                         <td className="px-2 py-2 sm:px-3 sm:py-3 text-xs text-gray-200">
                                           <span className="inline-block px-2 py-0.5 bg-blue-500/30 border border-blue-500/50 text-blue-300 rounded text-xs font-semibold">
-                                            {course.credit}
+                                            {course.credit.toFixed(1)}
                                           </span>
                                         </td>
                                       </motion.tr>
@@ -262,8 +262,8 @@ const AcademicActivity = () => {
                 className="flex-1 min-w-0 bg-linear-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-lg px-3 py-2 text-center"
                 variants={itemVariants}
               >
-                <p className="text-xl sm:text-2xl font-bold text-blue-400">
-                  {creditsCompleted}/{TOTAL_PROGRAM_CREDITS}
+                  <p className="text-xl sm:text-2xl font-bold text-blue-400">
+                  {creditsCompleted.toFixed(1)}/{TOTAL_PROGRAM_CREDITS}
                 </p>
                 <p className="text-gray-300 text-xs sm:text-sm mt-1">Credits Completed</p>
               </motion.div>

@@ -9,7 +9,7 @@
           "sl": 1,
           "courseCode": "ENG101",
           "courseTitle": "Basic Functional English and English Spoken",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_S",
           "teacher": "Shabnam Mustari Lia"
@@ -18,7 +18,7 @@
           "sl": 2,
           "courseCode": "MAT101",
           "courseTitle": "Mathematics-I",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_S",
           "teacher": "Muhiuddin Muhi"
@@ -27,7 +27,7 @@
           "sl": 3,
           "courseCode": "PHY101",
           "courseTitle": "Physics-I",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_S",
           "teacher": "Sakia Shabnam Kader"
@@ -36,7 +36,7 @@
           "sl": 4,
           "courseCode": "CSE112",
           "courseTitle": "Computer Fundamentals",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_S",
           "teacher": "Tasmim Sultana"
@@ -45,7 +45,7 @@
           "sl": 5,
           "courseCode": "CSE113",
           "courseTitle": "Programming and Problem Solving",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_S",
           "teacher": "Arpita Ghose Tusi"
@@ -63,7 +63,7 @@
           "sl": 7,
           "courseCode": "CSE115",
           "courseTitle": "Introduction to Biology and Chemistry for Computation",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_S",
           "teacher": "Md. Monarul Islam"
@@ -78,7 +78,7 @@
           "sl": 1,
           "courseCode": "ENG102",
           "courseTitle": "Writing and Comprehension",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_Q",
           "teacher": "Abir Saha"
@@ -87,7 +87,7 @@
           "sl": 2,
           "courseCode": "MAT102",
           "courseTitle": "Mathematics-II: Calculus, Complex Variables and Linear Algebra",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_Q",
           "teacher": "Nahid Sultana"
@@ -96,7 +96,7 @@
           "sl": 3,
           "courseCode": "PHY102",
           "courseTitle": "Physics - II",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_Q",
           "teacher": "Md. Shamim Hossain"
@@ -114,7 +114,7 @@
           "sl": 5,
           "courseCode": "CSE121",
           "courseTitle": "Electrical Circuits",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_Q",
           "teacher": "Ms. Farjana Akter"
@@ -132,7 +132,7 @@
           "sl": 7,
           "courseCode": "CSE123",
           "courseTitle": "Data Structure",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_Q",
           "teacher": "Sadia Jannat Mitu"
@@ -156,7 +156,7 @@
           "sl": 1,
           "courseCode": "CSE212",
           "courseTitle": "Discrete Mathematics",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_P",
           "teacher": "Mohammad Monirul Islam"
@@ -165,7 +165,7 @@
           "sl": 2,
           "courseCode": "CSE213",
           "courseTitle": "Algorithms",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_P",
           "teacher": "Md. Ferdouse Ahmed Foysal"
@@ -183,7 +183,7 @@
           "sl": 4,
           "courseCode": "MAT211",
           "courseTitle": "Engineering Mathematics",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_P",
           "teacher": "Noor Muhammad"
@@ -192,7 +192,7 @@
           "sl": 5,
           "courseCode": "BNS101",
           "courseTitle": "Bangladesh Studies (History of Independence and Contemporary Issues)",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_P",
           "teacher": "Shanjida Habib Swarna"
@@ -207,7 +207,7 @@
           "sl": 1,
           "courseCode": "AOL101",
           "courseTitle": "Art of Living",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_M",
           "teacher": "Ms. Jakia Khanom"
@@ -216,7 +216,7 @@
           "sl": 2,
           "courseCode": "CSE215",
           "courseTitle": "Electronic Devices and Circuits",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_M",
           "teacher": "Ummay Hani"
@@ -234,7 +234,7 @@
           "sl": 4,
           "courseCode": "CSE221",
           "courseTitle": "Object Oriented Programming",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_M",
           "teacher": "Md. Ashaf Uddaula"
@@ -258,7 +258,7 @@
           "sl": 1,
           "courseCode": "CSE228",
           "courseTitle": "Theory of Computation",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_F",
           "teacher": "Tapasy Rabeya"
@@ -267,7 +267,7 @@
           "sl": 2,
           "courseCode": "CSE227",
           "courseTitle": "Systems Analysis and Design",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_F",
           "teacher": "Mushfiqur Rahman"
@@ -276,7 +276,7 @@
           "sl": 3,
           "courseCode": "CSE225",
           "courseTitle": "Data Communication",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_F",
           "teacher": "Lamia Rukhsara"
@@ -294,7 +294,7 @@
           "sl": 5,
           "courseCode": "CSE223",
           "courseTitle": "Digital Logic Design",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_F",
           "teacher": "Israt Jahan"
@@ -309,7 +309,7 @@
           "sl": 1,
           "courseCode": "CSE226",
           "courseTitle": "Numerical Methods",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_C",
           "teacher": "Dr. Md. Mosfiqur Rahman"
@@ -318,7 +318,7 @@
           "sl": 2,
           "courseCode": "CSE311",
           "courseTitle": "Database Management System",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_C",
           "teacher": "Mohammad Jahangir Alam"
@@ -336,7 +336,7 @@
           "sl": 4,
           "courseCode": "CSE313",
           "courseTitle": "Compiler Design",
-          "credit": 3,
+          "credit": 3.0,
           "type": "REGULAR",
           "section": "66_C",
           "teacher": "Shah Md. Tanvir Siddiquee"
