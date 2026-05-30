@@ -39,7 +39,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           {/* Left: Message Box (Form) */}
-          <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-white/8 via-white/5 to-white/3 p-6 shadow-lg">
+          <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-white/8 via-white/5 to-white/3 p-6 shadow-lg order-2 lg:order-1">
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-fuchsia-500/10 blur-3xl" />
             <div className="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
 
@@ -99,7 +99,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right: Information + Social Media */}
-          <aside className="relative h-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-linear-to-br from-slate-950 via-slate-900 to-black p-6">
+          <aside className="relative h-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-linear-to-br from-slate-950 via-slate-900 to-black p-6 order-1 lg:order-2">
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute -top-16 -right-16 h-44 w-44 rounded-full bg-fuchsia-500/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-12 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl" />
