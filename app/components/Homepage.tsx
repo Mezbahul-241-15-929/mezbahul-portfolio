@@ -64,8 +64,8 @@ const Homepage = () => {
                             </motion.div>
 
                             <motion.div variants={itemVariants} className={`${leftFont.className} mt-6 sm:mt-8 flex justify-center lg:justify-start`}>
-                                <span className="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-slate-200 backdrop-blur-sm">
-                                    Fullstack Developer
+                                <span className="rounded-full font-medium border border-white/10 bg-white/5 px-5 py-2 text-sm text-slate-200 backdrop-blur-sm">
+                                    FULLSTACK DEVELOPER
                                 </span>
                             </motion.div>
 
@@ -122,7 +122,7 @@ const Homepage = () => {
 
                         {/* Right photo column: recreated to match reference */}
                         <motion.div className="relative z-10 order-first lg:order-last flex items-center justify-center lg:justify-end mt-6 sm:mt-8 lg:mt-0" variants={itemVariants} initial="hidden" animate="visible">
-                            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-md flex items-center justify-center group">
+                            <div className="relative w-[86%] max-w-xs sm:w-full sm:max-w-md md:max-w-md flex items-center justify-center group">
                                 {/* soft gradient backdrop behind photo + labels */}
                                 <div
                                     className="absolute -inset-8 rounded-4xl pointer-events-none"
@@ -139,7 +139,7 @@ const Homepage = () => {
                                 </div>
 
                                 <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/40 w-full hover:scale-105 hover:shadow-[0_0_50px_rgba(34,211,238,0.45)] transition-transform duration-300 cursor-pointer">
-                                    <div className="relative w-full h-105 sm:h-115 md:h-115 z-10 bg-linear-to-br from-cyan-700/6 via-blue-800/6 to-purple-700/6 flex items-center justify-center">
+                                    <div className="relative w-full h-90 sm:h-115 md:h-115 z-10 bg-linear-to-br from-cyan-700/6 via-blue-800/6 to-purple-700/6 flex items-center justify-center">
                                         <Image src="/Profile.png" alt="Profile" width={900} height={900} className="object-cover w-full h-full" />
                                     </div>
 

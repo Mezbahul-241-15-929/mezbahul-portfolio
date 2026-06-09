@@ -96,19 +96,18 @@ const CoursesAndProgramsSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">LEARNING JOURNEY</p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-white">
-            Courses, Programs &amp; <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Contests</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 leading-tight">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">
+              Courses, Programs &amp; Contests
+            </span>
           </h2>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-            Expanding knowledge through structured learning, professional programs, and continuous development
-          </p>
         </motion.div>
 
         {/* Tab Navigation */}
@@ -121,7 +120,7 @@ const CoursesAndProgramsSection = () => {
         >
           <motion.button
             onClick={() => setActiveTab('all')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 ${
               activeTab === 'all'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
@@ -133,7 +132,7 @@ const CoursesAndProgramsSection = () => {
           </motion.button>
           <motion.button
             onClick={() => setActiveTab('online')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 ${
               activeTab === 'online'
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
@@ -145,7 +144,7 @@ const CoursesAndProgramsSection = () => {
           </motion.button>
           <motion.button
             onClick={() => setActiveTab('programs')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 ${
               activeTab === 'programs'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
@@ -157,7 +156,7 @@ const CoursesAndProgramsSection = () => {
           </motion.button>
           <motion.button
             onClick={() => setActiveTab('contests')}
-            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 ${
               activeTab === 'contests'
                 ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'

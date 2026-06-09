@@ -73,8 +73,8 @@ const SkillsSection = () => {
                     viewport={{ once: true }}
                 >
                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">MY SKILLSET</p>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-white">
-                        The Magic <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Behind</span>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white">
+                        The <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Magic Behind</span>
                     </h2>
                 </motion.div>
 

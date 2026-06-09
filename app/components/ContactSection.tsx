@@ -31,7 +31,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-12">
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-3">GET IN TOUCH</p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             <span className="bg-linear-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Connect</span>
             <span className="text-white"> with Me</span>
           </h2>

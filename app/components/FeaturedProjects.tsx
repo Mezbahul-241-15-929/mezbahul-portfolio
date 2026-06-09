@@ -34,7 +34,7 @@ export default function FeaturedProjects() {
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

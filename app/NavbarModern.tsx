@@ -7,7 +7,7 @@ import { FiCode } from 'react-icons/fi';
 
 export default function NavbarModern() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>('home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,16 +15,17 @@ export default function NavbarModern() {
       setScrolled(window.scrollY > 20);
       
       const sections = ['about', 'projects', 'skills', 'learning', 'contact'];
-      let currentSection = '';
+      let currentSection = 'home';
+      const activationPoint = 120;
 
-      if (window.scrollY < 100) {
+      if (window.scrollY < activationPoint) {
         currentSection = 'home';
       } else {
         for (const sectionId of sections) {
           const element = document.getElementById(sectionId);
           if (element) {
             const rect = element.getBoundingClientRect();
-            if (rect.top <= 100) {
+            if (rect.top <= activationPoint) {
               currentSection = sectionId;
             }
           }
@@ -34,12 +35,14 @@ export default function NavbarModern() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     setIsOpen(false);
+    setActiveSection(sectionId);
     
     // Add small delay to allow menu animation to complete before scrolling
     setTimeout(() => {

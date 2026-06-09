@@ -124,7 +124,7 @@ const AcademicActivity = () => {
           viewport={{ once: true }}
         >
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-4 font-medium">ACADEMIC RECORD</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 leading-tight text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 leading-tight text-white">
             {programLabel} <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Completed Courses</span>
           </h2>
           
