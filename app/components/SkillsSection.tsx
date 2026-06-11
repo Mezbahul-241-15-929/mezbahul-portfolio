@@ -52,7 +52,7 @@ const SkillsSection = () => {
     return (
         <motion.section 
             id="skills" 
-            className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
+            className="py-20 sm:py-28 px-4 sm:px-10 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -80,7 +80,7 @@ const SkillsSection = () => {
 
                 {/* Skills Container - Horizontal Layout */}
                 <motion.div 
-                    className="flex flex-wrap gap-3 sm:gap-4 justify-center max-w-3xl mx-auto"
+                    className="flex flex-wrap gap-3 sm:gap-4 justify-center max-w-5xl mx-auto"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"

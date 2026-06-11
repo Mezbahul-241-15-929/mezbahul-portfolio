@@ -32,8 +32,7 @@ const ContactSection = () => {
         <div className="text-center mb-12">
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-3">GET IN TOUCH</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-            <span className="bg-linear-to-r from-purple-500 via-pink-500 to-purple-400 bg-clip-text text-transparent italic font-serif">Connect</span>
-            <span className="text-white"> with Me</span>
+            <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Connect with Me</span>
           </h2>
         </div>
 
@@ -90,7 +89,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="pt-3 flex">
-                  <button className="ml-auto inline-flex items-center rounded-full bg-linear-to-r from-purple-500 via-pink-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-pink-500/30">
+                  <button className="ml-auto inline-flex cursor-pointer items-center justify-center rounded-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 px-5 py-2.5 text-sm font-semibold text-black shadow-lg transition hover:-translate-y-0.5 hover:shadow-cyan-500/30">
                     Send Message
                   </button>
                 </div>
