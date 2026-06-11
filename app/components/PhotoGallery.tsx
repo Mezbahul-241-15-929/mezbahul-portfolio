@@ -162,7 +162,7 @@ export default function PhotoGallery() {
   }, [activeIndex, zoom, pan]);
 
   return (
-    <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden rounded-lg">
+    <section id="gallery" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden rounded-lg">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-6 sm:mb-8">
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">GALLERY</p>

@@ -18,17 +18,17 @@ export default function Home() {
       {/* <Homepage3 /> */}
       <Aboutme />
 
-      <PhotoGallery />
-
       <AcademicActivity />
 
-      <FeaturedProjects />
-
       <SkillsSection />
+
+      <FeaturedProjects />
 
       <CoursesAndProgramsSection />
 
       <ContactSection />
+
+      <PhotoGallery />
     </>
   );
 }

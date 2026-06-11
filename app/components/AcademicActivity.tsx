@@ -100,7 +100,7 @@ const AcademicActivity = () => {
 
   return (
     <motion.section
-      id="academic-activity"
+      id="academics"
       className="py-12 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

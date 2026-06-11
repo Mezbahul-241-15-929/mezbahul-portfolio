@@ -27,7 +27,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/80">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/80">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-12">
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-3">GET IN TOUCH</p>
