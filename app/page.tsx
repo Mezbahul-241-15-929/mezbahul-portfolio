@@ -18,6 +18,8 @@ export default function Home() {
       {/* <Homepage3 /> */}
       <Aboutme />
 
+      <PhotoGallery />
+
       <AcademicActivity />
 
       <SkillsSection />
@@ -28,7 +30,7 @@ export default function Home() {
 
       <ContactSection />
 
-      <PhotoGallery />
+      
     </>
   );
 }
