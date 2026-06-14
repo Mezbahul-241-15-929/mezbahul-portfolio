@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -27,18 +28,37 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/80">
+    <motion.section
+      id="contact"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-black/80 overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-3">GET IN TOUCH</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Connect with Me</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           {/* Left: Message Box (Form) */}
-          <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-white/8 via-white/5 to-white/3 p-6 shadow-lg order-2 lg:order-1">
+          <motion.div
+            className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-white/8 via-white/5 to-white/3 p-6 shadow-lg hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] hover:border-cyan-400/30 hover:-translate-y-1.5 transition-all duration-300 order-2 lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, type: "spring", bounce: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-fuchsia-500/10 blur-3xl" />
             <div className="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
 
@@ -95,10 +115,16 @@ const ContactSection = () => {
                 </div>
               </form>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Information + Social Media */}
-          <aside className="relative h-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-linear-to-br from-slate-950 via-slate-900 to-black p-6 order-1 lg:order-2">
+          <motion.aside
+            className="relative h-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-linear-to-br from-slate-950 via-slate-900 to-black p-6 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:border-purple-500/30 hover:-translate-y-1.5 transition-all duration-300 order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, type: "spring", bounce: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute -top-16 -right-16 h-44 w-44 rounded-full bg-fuchsia-500/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-12 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -173,10 +199,10 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-          </aside>
+          </motion.aside>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
