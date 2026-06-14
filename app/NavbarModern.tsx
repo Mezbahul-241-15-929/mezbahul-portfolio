@@ -39,7 +39,7 @@ export default function NavbarModern() {
         }
       }
       
-      const sections = ['about', 'academics', 'skills', 'projects', 'learning', 'contact'];
+      const sections = ['about', 'gallery', 'academics', 'skills', 'projects', 'learning', 'contact'];
       let currentSection = 'home';
       const activationPoint = 120;
 
@@ -137,6 +137,7 @@ export default function NavbarModern() {
   const navLinks = [
     { name: 'Home', href: '#home', icon: '🏠' },
     { name: 'About', href: '#about', icon: '👤' },
+    { name: 'Gallery', href: '#gallery', icon: '🖼️' },
     { name: 'Academics', href: '#academics', icon: '🎓' },
     { name: 'Skills', href: '#skills', icon: '🛠️' },
     { name: 'Projects', href: '#projects', icon: '💼' },
@@ -241,7 +242,6 @@ export default function NavbarModern() {
                       {link.name}
                     </span>
 
-                    {/* Active indicator */}
                     {isActive && (
                       <motion.div
                         className="absolute bottom-0 left-4 right-4 h-1 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full"
@@ -289,7 +289,6 @@ export default function NavbarModern() {
                       <span>{link.name}</span>
                     </span>
 
-                    {/* Active indicator */}
                     {isActive && (
                       <motion.div
                         className="absolute bottom-0 left-1 right-1 h-0.5 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full"

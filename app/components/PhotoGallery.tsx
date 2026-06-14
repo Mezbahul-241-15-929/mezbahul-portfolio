@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type CategoryKey = "Certificate" | "Gallery";
 
@@ -42,6 +43,27 @@ const LABELS: Record<CategoryKey, string> = {
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 4;
 const ZOOM_STEP = 0.5;
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.45 },
+  },
+};
 
 export default function PhotoGallery() {
   const [active, setActive] = useState<CategoryKey>(CATEGORIES[0]);
@@ -162,51 +184,99 @@ export default function PhotoGallery() {
   }, [activeIndex, zoom, pan]);
 
   return (
-    <section id="gallery" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden rounded-lg">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-6 sm:mb-8">
-          <p className="text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">GALLERY</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 leading-tight text-white">
-            <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Photo Gallery</span>
-          </h2>
-        </div>
+    <>
+      <motion.section
+        id="gallery"
+        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden rounded-lg"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            className="text-center mb-6 sm:mb-8"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">GALLERY</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 leading-tight text-white">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">Photo Gallery</span>
+            </h2>
+          </motion.div>
 
-        <div className="flex items-center justify-center mb-6 gap-3 flex-wrap">
-          {CATEGORIES.map((c) => (
-            <button
-              key={c}
-              onClick={() => setActive(c)}
-              className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition flex items-center gap-2 ${c === active ? "bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-black shadow-lg" : "bg-white/5 text-white hover:bg-white/10"}`}
+          <motion.div
+            className="flex items-center justify-center mb-6 gap-3 flex-wrap"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
+            {CATEGORIES.map((c) => (
+              <motion.button
+                key={c}
+                onClick={() => {
+                  setActive(c);
+                  setActiveIndex(null);
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition flex items-center gap-2 ${c === active ? "bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-black shadow-lg" : "bg-white/5 text-white hover:bg-white/10"}`}
+              >
+                <span>{LABELS[c]}</span>
+              </motion.button>
+            ))}
+          </motion.div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
             >
-              <span>{LABELS[c]}</span>
-            </button>
-          ))}
+              {photosToShow.map((p, index) => (
+                <motion.div
+                  key={p.id}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.03, y: -4 }}
+                  transition={{ duration: 0.25 }}
+                  className="relative rounded-lg overflow-hidden bg-white/5 ring-1 ring-white/10 cursor-pointer"
+                  onClick={() => setActiveIndex(index)}
+                >
+                  <img
+                    src={p.url}
+                    alt={p.name}
+                    loading="lazy"
+                    className="w-full h-72 md:h-80 object-cover"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
+      </motion.section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {photosToShow.map((p) => (
-            <div
-              key={p.id}
-              className="relative rounded-lg overflow-hidden bg-white/5 ring-1 ring-white/10"
-            >
-              <img
-                src={p.url}
-                alt={p.name}
-                loading="lazy"
-                className="w-full h-72 md:h-80 object-cover"
-              />
-            </div>
-          ))}
-        </div>
-
+      <AnimatePresence>
         {currentPhoto && activeIndex !== null && (
-          <div
-            className="fixed inset-0 z-50 bg-black animate-[fadeIn_0.2s_ease-out] overflow-hidden"
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md overflow-hidden flex flex-col justify-between"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             onClick={closeViewer}
           >
             {/* Top bar */}
-            <div
+            <motion.div
               className="absolute top-0 left-0 right-0 flex items-center justify-between gap-3 z-20 p-4 sm:p-6 bg-gradient-to-b from-black/80 via-black/40 to-transparent"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur text-white text-sm font-semibold">
@@ -223,48 +293,48 @@ export default function PhotoGallery() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={(e) => { e.stopPropagation(); zoomOut(); }}
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg font-bold transition"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg font-bold transition cursor-pointer"
                   aria-label="Zoom out"
                 >
                   −
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); resetZoom(); }}
-                  className="px-3 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition min-w-16"
+                  className="px-3 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition min-w-16 cursor-pointer"
                   aria-label="Reset zoom"
                 >
                   {Math.round(zoom * 100)}%
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); zoomIn(); }}
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg font-bold transition"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg font-bold transition cursor-pointer"
                   aria-label="Zoom in"
                 >
                   +
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); closeViewer(); }}
-                  className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-black flex items-center justify-center text-lg font-bold shadow-lg hover:scale-110 transition ml-2"
+                  className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-black flex items-center justify-center text-lg font-bold shadow-lg hover:scale-110 transition ml-2 cursor-pointer"
                   aria-label="Close"
                 >
                   ✕
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Prev / Next */}
             {photosToShow.length > 1 && (
               <>
                 <button
                   onClick={(e) => { e.stopPropagation(); showPrev(); }}
-                  className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 hover:text-black text-white text-2xl font-bold flex items-center justify-center transition z-10 backdrop-blur"
+                  className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 hover:text-black text-white text-2xl font-bold flex items-center justify-center transition z-20 backdrop-blur cursor-pointer"
                   aria-label="Previous"
                 >
                   ‹
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); showNext(); }}
-                  className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 hover:text-black text-white text-2xl font-bold flex items-center justify-center transition z-10 backdrop-blur"
+                  className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 hover:text-black text-white text-2xl font-bold flex items-center justify-center transition z-20 backdrop-blur cursor-pointer"
                   aria-label="Next"
                 >
                   ›
@@ -272,51 +342,44 @@ export default function PhotoGallery() {
               </>
             )}
 
-            {/* Full-screen image - fills the entire popup */}
-            <img
-              id="viewer-image"
-              src={currentPhoto.url}
-              alt={currentPhoto.name}
-              draggable={false}
-              onClick={(e) => e.stopPropagation()}
-              onDoubleClick={(e) => { e.stopPropagation(); zoom === 1 ? zoomIn() : resetZoom(); }}
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100vw",
-                height: "100vh",
-                maxWidth: "100vw",
-                maxHeight: "100vh",
-                objectFit: "contain",
-                transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
-                transformOrigin: "center center",
-                cursor: zoom > 1 ? (pan.x !== 0 || pan.y !== 0 ? "grabbing" : "grab") : "zoom-in",
-                transition: "transform 0.2s ease",
-                touchAction: "none",
-              }}
-              className="select-none z-10"
-            />
+            {/* Centered image container - click outside image to close */}
+            <div className="w-full h-full flex items-center justify-center p-4">
+              <img
+                id="viewer-image"
+                src={currentPhoto.url}
+                alt={currentPhoto.name}
+                draggable={false}
+                onClick={(e) => e.stopPropagation()}
+                onDoubleClick={(e) => { e.stopPropagation(); zoom === 1 ? zoomIn() : resetZoom(); }}
+                style={{
+                  maxWidth: "95vw",
+                  maxHeight: "85vh",
+                  objectFit: "contain",
+                  transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
+                  transformOrigin: "center center",
+                  cursor: zoom > 1 ? (pan.x !== 0 || pan.y !== 0 ? "grabbing" : "grab") : "zoom-in",
+                  transition: "transform 0.2s ease",
+                  touchAction: "none",
+                }}
+                className="select-none z-10 shadow-2xl rounded-lg border border-white/10"
+              />
+            </div>
 
             {/* Bottom hint */}
-            <div
+            <motion.div
               className="absolute bottom-0 left-0 right-0 flex items-center justify-center p-4 sm:p-6 z-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="px-4 py-2 rounded-full bg-white/10 backdrop-blur text-white/70 text-xs font-medium">
-                ← → navigate &nbsp;·&nbsp; +/− zoom &nbsp;·&nbsp; double-click to toggle
+                ← → navigate &nbsp;·&nbsp; +/− zoom &nbsp;·&nbsp; double-click to toggle &nbsp;·&nbsp; click background to close
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
-      </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-      `}</style>
-    </section>
+      </AnimatePresence>
+    </>
   );
 }

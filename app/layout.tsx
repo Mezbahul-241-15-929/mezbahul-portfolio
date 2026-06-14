@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import NavbarModern from "./NavbarModern";
 import Footer from "./Footer";
 import StaticBackground from "./StaticBackground";
+import GoToTopButton from "./components/GoToTopButton";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Mezbahul Islam",
   description: "Welcome to my portfolio",
 };
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         <NavbarModern />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
+        <GoToTopButton />
       </body>
     </html>
   );
