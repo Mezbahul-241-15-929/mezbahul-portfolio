@@ -51,7 +51,7 @@ const projects: Project[] = [
     description:
       'A student performance dashboard with course progress, contest history, and clean analytics cards for quick academic review.',
     image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+      '/project/Mockup2.png',
     tech: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind'],
     liveLink: 'https://scholartrack-demo.vercel.app',
     githubLink: 'https://github.com/mezbahul999/scholartrack-dashboard',
@@ -64,7 +64,7 @@ const projects: Project[] = [
     description:
       'A modern personal portfolio builder with responsive sections, project cards, gallery layout, and animated page transitions.',
     image:
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+      '/project/Mockup1.png',
     tech: ['React', 'Framer Motion', 'Tailwind', 'Vercel'],
     liveLink: 'https://devportfolio-studio.vercel.app',
     githubLink: 'https://github.com/mezbahul999/devportfolio-studio',
@@ -77,7 +77,7 @@ const projects: Project[] = [
     description:
       'A productivity app for planning tasks, tracking deadlines, and organizing team work with auth-ready project boards.',
     image:
-      'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80',
+      '/project/Mockup2.png',
     tech: ['Next.js', 'Node.js', 'Express', 'PostgreSQL'],
     liveLink: 'https://taskflow-manager-demo.vercel.app',
     githubLink: 'https://github.com/mezbahul999/taskflow-manager',
