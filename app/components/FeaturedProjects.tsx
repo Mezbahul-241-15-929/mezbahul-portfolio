@@ -116,7 +116,7 @@ const projects: Project[] = [
     description:
       'A compact monitoring interface that checks endpoint status, response time, uptime history, and error summaries.',
     image:
-      '/project/Mockup2.png',
+      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
     tech: ['Node.js', 'Express', 'React', 'MongoDB'],
     liveLink: 'https://api-health-monitor.vercel.app',
     githubLink: 'https://github.com/mezbahul999/api-health-monitor',
