@@ -90,7 +90,7 @@ const projects: Project[] = [
     description:
       'A lightweight coding practice tracker for solved problems, contest notes, difficulty tags, and weekly improvement goals.',
     image:
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
+      '/project/Mockup2.png',
     tech: ['TypeScript', 'Firebase', 'Chart.js', 'CSS'],
     liveLink: 'https://codejudge-companion.vercel.app',
     githubLink: 'https://github.com/mezbahul999/codejudge-companion',
@@ -103,7 +103,7 @@ const projects: Project[] = [
     description:
       'A responsive event listing platform for campus programs with category filters, registration CTAs, and organizer details.',
     image:
-      'https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1200&q=80',
+      '/project/Mockup2.png',
     tech: ['React', 'Next.js', 'REST API', 'Tailwind'],
     liveLink: 'https://campus-event-hub.vercel.app',
     githubLink: 'https://github.com/mezbahul999/campus-event-hub',
@@ -116,7 +116,7 @@ const projects: Project[] = [
     description:
       'A compact monitoring interface that checks endpoint status, response time, uptime history, and error summaries.',
     image:
-      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+      '/project/Mockup2.png',
     tech: ['Node.js', 'Express', 'React', 'MongoDB'],
     liveLink: 'https://api-health-monitor.vercel.app',
     githubLink: 'https://github.com/mezbahul999/api-health-monitor',
