@@ -19,104 +19,54 @@ export default function StaticBackground() {
     };
     resizeCanvas();
 
-    // Static orb position (top right, half visible)
-    const orb = {
-      x: canvas.width * 0.85,
-      y: canvas.height * 0.25,
-      radius: 250,
-    };
-
     let animationFrameId: number;
     let frameCount = 0;
 
     const animate = () => {
       frameCount++;
 
-      // Clear canvas with dark background
+      // Homepage-style dark background
       const bgGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      bgGradient.addColorStop(0, 'rgba(10, 5, 15, 1)');
-      bgGradient.addColorStop(0.5, 'rgba(5, 5, 20, 1)');
-      bgGradient.addColorStop(1, 'rgba(10, 5, 15, 1)');
+      bgGradient.addColorStop(0, 'rgba(2, 4, 12, 1)');
+      bgGradient.addColorStop(0.5, 'rgba(5, 9, 28, 1)');
+      bgGradient.addColorStop(1, 'rgba(16, 3, 38, 1)');
       ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      const pageGlow = ctx.createRadialGradient(
+        canvas.width * 0.72,
+        canvas.height * 0.45,
+        0,
+        canvas.width * 0.72,
+        canvas.height * 0.45,
+        Math.max(canvas.width, canvas.height) * 0.7
+      );
+      pageGlow.addColorStop(0, 'rgba(25, 16, 119, 0.85)');
+      pageGlow.addColorStop(0.25, 'rgba(7, 8, 45, 0.6)');
+      pageGlow.addColorStop(0.55, 'rgba(7, 8, 45, 0.16)');
+      pageGlow.addColorStop(1, 'rgba(7, 8, 45, 0)');
+
+      ctx.fillStyle = pageGlow;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Grid overlay to match the homepage card background
+      ctx.strokeStyle = 'rgba(72, 111, 255, 0.05)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < canvas.width; x += 42) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += 42) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
       // Draw subtle stars
       drawStars(ctx, canvas.width, canvas.height, frameCount);
-
-      // Draw the red glowing sphere with pulsing effect
-      const pulseScale = 1 + 0.05 * Math.sin(frameCount * 0.01);
-
-      // Outer glow (largest)
-      const outerGlow = ctx.createRadialGradient(
-        orb.x,
-        orb.y,
-        0,
-        orb.x,
-        orb.y,
-        orb.radius * 2.5
-      );
-      outerGlow.addColorStop(0, 'rgba(220, 50, 50, 0.2)');
-      outerGlow.addColorStop(0.3, 'rgba(200, 30, 30, 0.1)');
-      outerGlow.addColorStop(0.7, 'rgba(150, 20, 20, 0.03)');
-      outerGlow.addColorStop(1, 'rgba(100, 10, 10, 0)');
-
-      ctx.fillStyle = outerGlow;
-      ctx.beginPath();
-      ctx.arc(orb.x, orb.y, orb.radius * 2.5, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Middle glow
-      const midGlow = ctx.createRadialGradient(
-        orb.x,
-        orb.y,
-        0,
-        orb.x,
-        orb.y,
-        orb.radius * 1.8
-      );
-      midGlow.addColorStop(0, 'rgba(255, 100, 80, 0.4)');
-      midGlow.addColorStop(0.4, 'rgba(220, 60, 60, 0.2)');
-      midGlow.addColorStop(1, 'rgba(150, 30, 30, 0)');
-
-      ctx.fillStyle = midGlow;
-      ctx.beginPath();
-      ctx.arc(orb.x, orb.y, orb.radius * 1.8, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Main sphere
-      const sphereGradient = ctx.createRadialGradient(
-        orb.x - orb.radius * 0.3,
-        orb.y - orb.radius * 0.3,
-        0,
-        orb.x,
-        orb.y,
-        orb.radius * pulseScale
-      );
-      sphereGradient.addColorStop(0, 'rgba(255, 150, 100, 0.9)');
-      sphereGradient.addColorStop(0.3, 'rgba(220, 80, 60, 0.7)');
-      sphereGradient.addColorStop(0.7, 'rgba(180, 40, 40, 0.5)');
-      sphereGradient.addColorStop(1, 'rgba(100, 20, 20, 0.3)');
-
-      ctx.fillStyle = sphereGradient;
-      ctx.beginPath();
-      ctx.arc(orb.x, orb.y, orb.radius * pulseScale, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Bright rim light (edge highlight)
-      const rimGradient = ctx.createLinearGradient(
-        orb.x - orb.radius,
-        orb.y - orb.radius * 0.5,
-        orb.x + orb.radius * 0.2,
-        orb.y + orb.radius * 0.2
-      );
-      rimGradient.addColorStop(0, 'rgba(255, 180, 150, 0.8)');
-      rimGradient.addColorStop(0.5, 'rgba(255, 140, 100, 0.3)');
-      rimGradient.addColorStop(1, 'rgba(200, 80, 60, 0)');
-
-      ctx.fillStyle = rimGradient;
-      ctx.beginPath();
-      ctx.arc(orb.x, orb.y, orb.radius * pulseScale, 0, Math.PI * 2);
-      ctx.fill();
 
       animationFrameId = requestAnimationFrame(animate);
     };

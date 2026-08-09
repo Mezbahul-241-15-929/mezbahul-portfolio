@@ -52,7 +52,7 @@ const SkillsSection = () => {
     return (
         <motion.section 
             id="skills" 
-            className="py-20 sm:py-28 px-4 sm:px-10 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
+            className="project-background py-20 sm:py-28 px-4 sm:px-10 lg:px-8 relative overflow-hidden"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}

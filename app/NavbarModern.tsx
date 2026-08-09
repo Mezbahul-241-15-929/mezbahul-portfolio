@@ -191,12 +191,16 @@ export default function NavbarModern() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative w-10 h-10 flex items-center justify-center">
+              <motion.div
+                className="relative w-10 h-10 flex items-center justify-center"
+                animate={{ y: [0, -2, 0], rotate: [0, 2, 0, -2, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
                 <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative w-10 h-10 bg-black rounded-lg flex items-center justify-center">
                   <FiCode className="w-6 h-6 text-cyan-400" />
                 </div>
-              </div>
+              </motion.div>
               <div className="flex sm:flex flex-col items-start gap-1">
                 <span className="text-xs sm:text-sm font-extrabold text-cyan-400 tracking-wider leading-none">
                   MEZBAHUL

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
-type ProjectCategory = 'all' | 'web' | 'fullstack' | 'tools';
+type ProjectCategory = 'all' | 'web' | 'fullstack' | 'landing Page' ;
 
 type Project = {
   id: number;
@@ -20,10 +20,16 @@ type Project = {
 };
 
 const filterOptions: { id: ProjectCategory; label: string; activeClass: string }[] = [
+  
   {
     id: 'all',
     label: 'All Projects',
     activeClass: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/40',
+  },
+  {
+    id: 'landing Page',
+    label: 'Landing Page',
+    activeClass: 'bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white shadow-lg shadow-fuchsia-500/40',
   },
   {
     id: 'web',
@@ -35,91 +41,138 @@ const filterOptions: { id: ProjectCategory; label: string; activeClass: string }
     label: 'Full Stack',
     activeClass: 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/40',
   },
-  {
-    id: 'tools',
-    label: 'Tools',
-    activeClass: 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/40',
-  },
 ];
 
 const projects: Project[] = [
   {
     id: 1,
-    title: 'ScholarTrack Dashboard',
-    category: 'fullstack',
-    type: 'Full Stack',
+    title: 'Kids School',
+    category: 'landing Page',
+    type: 'Landing Page',
     description:
-      'A student performance dashboard with course progress, contest history, and clean analytics cards for quick academic review.',
+      'Kids School is a clean, modern, and responsive educational website built with HTML5 and CSS3, featuring a structured layout and engaging visual design.',
     image:
-      '/project/Mockup2.png',
-    tech: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind'],
-    liveLink: 'https://scholartrack-demo.vercel.app',
-    githubLink: 'https://github.com/mezbahul999/scholartrack-dashboard',
+      '/project/1.png',
+    tech: ['HTML', 'CSS'],
+    liveLink: 'https://mezbahul-241-15-929.github.io/B11-A2-Kids-School/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A2-Kids-School',
   },
   {
     id: 2,
-    title: 'DevPortfolio Studio',
-    category: 'web',
-    type: 'Web App',
+    title: 'Browse for Pets',
+    category: 'landing Page',
+    type: 'Landing Page',
     description:
-      'A modern personal portfolio builder with responsive sections, project cards, gallery layout, and animated page transitions.',
+      'Browse4Pets is a modern, responsive pet care website featuring pet categories, trending products, special offers, and essential supplies with a clean, engaging design.',
     image:
-      '/project/Mockup1.png',
-    tech: ['React', 'Framer Motion', 'Tailwind', 'Vercel'],
-    liveLink: 'https://devportfolio-studio.vercel.app',
-    githubLink: 'https://github.com/mezbahul999/devportfolio-studio',
+      '/project/2.png',
+    tech: ['HTML', 'CSS,','Tailwind CSS'],
+    liveLink: 'https://mezbahul-241-15-929.github.io/B11-A3-Living-Lab-with-Tailwind-CSS/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A3-Living-Lab-with-Tailwind-CSS',
   },
   {
     id: 3,
-    title: 'TaskFlow Manager',
-    category: 'fullstack',
-    type: 'Full Stack',
+    title: 'Delicious Restaurant',
+    category: 'landing Page',
+    type: 'Landing Page',
     description:
-      'A productivity app for planning tasks, tracking deadlines, and organizing team work with auth-ready project boards.',
+      'Delicious Restaurant is a modern, responsive website featuring a home page, menu, contact, reservation, and mobile-friendly navigation.',
     image:
-      '/project/Mockup2.png',
-    tech: ['Next.js', 'Node.js', 'Express', 'PostgreSQL'],
-    liveLink: 'https://taskflow-manager-demo.vercel.app',
-    githubLink: 'https://github.com/mezbahul999/taskflow-manager',
+      '/project/3.png',
+    tech: ['HTML', 'CSS',],
+    liveLink: 'http://mezbahul.me/Restaurant-Website/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/Restaurant-Website',
   },
   {
     id: 4,
-    title: 'CodeJudge Companion',
-    category: 'tools',
-    type: 'Developer Tool',
+    title: 'MyTunes',
+    category: 'landing Page',
+    type: 'Landing Page',
     description:
-      'A lightweight coding practice tracker for solved problems, contest notes, difficulty tags, and weekly improvement goals.',
+      'MyTunes is a clean, modern, and responsive music website built with HTML5 and CSS3, featuring a structured layout and professional visual design.',
     image:
-      '/project/Mockup2.png',
-    tech: ['TypeScript', 'Firebase', 'Chart.js', 'CSS'],
-    liveLink: 'https://codejudge-companion.vercel.app',
-    githubLink: 'https://github.com/mezbahul999/codejudge-companion',
+      '/project/4.png',
+    tech: ['HTML', 'CSS'],
+    liveLink: 'http://mezbahul.me/Music-Website-MyTunes/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/Music-Website-MyTunes',
   },
   {
     id: 5,
-    title: 'Campus Event Hub',
-    category: 'web',
-    type: 'Web App',
+    title: 'G3 Architects',
+    category: 'landing Page',
+    type: 'Landing Page',
     description:
-      'A responsive event listing platform for campus programs with category filters, registration CTAs, and organizer details.',
+      'G3 Architects is a modern, responsive website built with HTML and CSS, featuring clean layouts and professional visual design.',
     image:
-      '/project/Mockup2.png',
-    tech: ['React', 'Next.js', 'REST API', 'Tailwind'],
-    liveLink: 'https://campus-event-hub.vercel.app',
-    githubLink: 'https://github.com/mezbahul999/campus-event-hub',
+      '/project/5.png',
+    tech: ['HTML', 'CSS'],
+    liveLink: 'http://mezbahul.me/G3-Architects/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/G3-Architects',
   },
   {
     id: 6,
-    title: 'API Health Monitor',
-    category: 'tools',
-    type: 'Developer Tool',
+    title: 'BoxNest',
+    category: 'web',
+    type: 'Web App',
     description:
-      'A compact monitoring interface that checks endpoint status, response time, uptime history, and error summaries.',
+      'BoxNest is a modern, responsive news portal built with React and Firebase. ',
     image:
-      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
-    tech: ['Node.js', 'Express', 'React', 'MongoDB'],
-    liveLink: 'https://api-health-monitor.vercel.app',
-    githubLink: 'https://github.com/mezbahul999/api-health-monitor',
+      '/project/6.png',
+    tech: ['React',"Tailwind CSS",'DaisyUI', 'Firebase'],
+    liveLink: 'https://boxnest.netlify.app/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/BoxNest',
+  },
+  {
+    id: 7,
+    title: 'Phudu Medical',
+    category: 'web',
+    type: 'Web App',
+    description:
+      'Phudu is a modern React-based medical appointment app for discovering doctors, viewing profiles, booking appointments, and managing bookings.',
+    image:
+      '/project/7.png',
+    tech: ['React',"Tailwind CSS", 'Firebase','Netlify'],
+    liveLink: 'https://phudumedicalappointment.netlify.app/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/Medical-Appointment-Booking-Application',
+  },
+  {
+    id: 8,
+    title: 'Plant Care',
+    category: 'fullstack',
+    type: 'Full Stack',
+    description:
+      'Plant Care is a modern, responsive platform for exploring, managing, and tracking plant care with secure authentication.',
+    image:
+      '/project/8.png',
+    tech: ['React',"Tailwind CSS", 'Firebase','Netlify', 'Node.js', 'Express', 'MongoDB'],
+    liveLink: 'https://plantcareclient.netlify.app/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/plantcare',
+  },
+  {
+    id: 9,
+    title: 'Plant Care',
+    category: 'fullstack',
+    type: 'Full Stack',
+    description:
+      'BookNest is a modern book management platform for discovering, organizing, and tracking books with secure authentication and a responsive UI.',
+    image:
+      '/project/9.png',
+    tech: ['React',"Tailwind CSS", 'Firebase', 'Node.js', 'Express', 'MongoDB'],
+    liveLink: 'https://booknest-be304.web.app/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/BookNest_Client',
+  },
+  {
+    id: 10,
+    title: 'PriceBazar',
+    category: 'fullstack',
+    type: 'Full Stack',
+    description:
+      'PriceBazar is a modern price-comparison marketplace built with React and Vite, featuring product comparison, secure payments, and role-based vendor and admin dashboards.',
+    image:
+      '/project/10.png',
+    tech: ['React',"Tailwind CSS", 'Firebase', 'Node.js', 'Express', 'MongoDB'],
+    liveLink: 'https://react-tempate.web.app/',
+    githubLink: 'https://github.com/Mezbahul-241-15-929/PriceBazar_Client',
   },
 ];
 
@@ -157,7 +210,7 @@ export default function FeaturedProjects() {
   return (
     <motion.section
       id="projects"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden"
+      className="project-background py-20 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

@@ -1,177 +1,190 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
+import { Building2, Download, GraduationCap } from 'lucide-react';
 
-const Aboutme = () => {
-    return (
-        <div>
-            {/* About Section */}
-            <motion.section
-                id="about"
-                className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-            >
-                <div className="max-w-7xl mx-auto">
-                    <div className="h-0.5 w-56 md:w-64 mx-auto mb-2 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500"></div>
-                    <motion.h2
-                        className="text-4xl sm:text-4xl md:text-5xl font-bold mb-12 text-center"
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                    >
-                        <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic font-serif">About Me</span>
-                        <div className="h-0.5 w-56 md:w-64 mx-auto mt-2 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500"></div>
-                    </motion.h2>
+const education = [
+  {
+    title: 'SSC',
+    institute: 'Amena-Baki Residential Model School & College',
+    year: '2021',
+    field: 'Science',
+    result: 'Result: GPA 5.00 (out of 5.00)',
+    logo: '/1.png',
+    alt: 'Amena-Baki Residential Model School & College logo',
+  },
+  {
+    title: 'HSC',
+    institute: 'Cantonment School & College, Saidpur',
+    year: '2023',
+    field: 'Science',
+    result: 'Result: GPA 4.84 (out of 5.00)',
+    logo: '/2.png',
+    alt: 'Cantonment School & College logo',
+  },
+  {
+    title: 'BSC',
+    institute: 'Daffodil International University',
+    year: 'Studying',
+    field: 'CSE',
+    result: 'Average: CGPA 3.29',
+    logo: '/3.png',
+    alt: 'Daffodil International University logo',
+  },
+];
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Bio and Profile Card - Left Side */}
-                        <motion.div
-                            className="lg:col-span-1 flex justify-center"
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                        >
-                            {/* Profile Card */}
-                            <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-linear-to-b from-white/8 to-white/4 px-6 py-7 text-center shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-sm transition hover:border-cyan-400/20 hover:from-white/10 hover:to-white/5">
-                                <div className="pointer-events-none absolute inset-0">
-                                    <div className="absolute -left-12 -top-16 h-44 w-44 rounded-full bg-cyan-500/10 blur-3xl" />
-                                    <div className="absolute -bottom-16 -right-12 h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
-                                </div>
+const cardClass =
+  'relative overflow-hidden rounded-2xl border border-white/12 bg-[#080d2a]/95 shadow-[0_18px_55px_rgba(0,0,0,0.35)]';
 
-                                <div className="relative flex flex-col items-center">
-                                    <span className="relative flex h-40 w-40 items-center justify-center rounded-full bg-linear-to-br from-cyan-400 via-blue-500 to-fuchsia-500 p-1.5 shadow-lg shadow-cyan-500/20 sm:h-44 sm:w-44">
-                                        <span className="relative h-full w-full overflow-hidden rounded-full border border-white/15 bg-slate-950">
-                                            <Image
-                                                src="/Profile2.jpg"
-                                                alt="Profile"
-                                                fill
-                                                className="object-cover"
-                                                sizes="176px"
-                                            />
-                                        </span>
-                                    </span>
+export default function Aboutme() {
+  return (
+    <motion.section
+      id="about"
+      className="project-background relative overflow-hidden px-3 py-10 text-white sm:px-4 sm:py-14 lg:px-8 lg:py-16"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+    >
+      <motion.div
+        className="relative mx-auto mb-5 max-w-7xl text-center sm:mb-6"
+        initial={{ opacity: 0, y: -14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+      >
+        <div className="mx-auto mb-2 h-0.5 w-40 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 sm:w-56 md:w-64" />
+        <h2 className="text-3xl font-bold sm:text-4xl">
+          <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text font-serif italic text-transparent">
+            About Me
+          </span>
+        </h2>
+        <div className="mx-auto mt-2 h-0.5 w-40 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 sm:w-56 md:w-64" />
+      </motion.div>
 
-                                    <div className="mt-5 space-y-2">
-                                        <h3 className="text-2xl font-bold leading-tight bg-linear-to-r from-cyan-300 via-white to-blue-300 bg-clip-text text-transparent">
-                                            Md. Mezbahul Islam
-                                        </h3>
-                                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
-                                            Department of CSE
-                                        </p>
-                                        <p className="text-base font-medium leading-snug text-slate-200">
-                                            Daffodil International Univiersity
-                                        </p>
-                                    </div>
+      <div className="relative mx-auto grid w-full max-w-7xl gap-4 lg:grid-cols-[0.92fr_1.08fr] xl:gap-5">
+        <motion.article
+          className={`${cardClass} px-5 py-6 text-center sm:px-7 lg:px-8 lg:py-7`}
+          initial={{ opacity: 0, x: -22 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+        >
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-5 top-5 h-24 w-28 opacity-25 [background-image:radial-gradient(rgba(46,137,255,0.8)_1px,transparent_1px)] [background-size:13px_13px]" />
+            <div className="absolute inset-x-0 top-0 mx-auto h-64 w-64 rounded-full border border-cyan-400/8" />
+            <div className="absolute bottom-[-5rem] right-[-4rem] h-56 w-56 rounded-full bg-fuchsia-500/10 blur-3xl" />
+          </div>
 
-                                    {/* Bio Section */}
-                                    <p className="mt-6 text-sm leading-relaxed text-slate-300">
-                                        Hi, I&apos;m Md. Mezbahul Islam, and I&apos;m from Bangladesh.
-                                        I am a Web Developer and Graphic Designer.
-                                        Currently, I am studying in the Department of Computer Science and Engineering at Daffodil International University.
-                                        I can build full-stack websites using the MERN stack.
-                                    </p>
-
-                                    <motion.a
-                                        href="/cv.pdf"
-                                        download
-                                        className="mt-8 inline-flex items-center gap-3 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 px-8 py-3.5 text-base font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 transition-all duration-300"
-                                        whileHover={{ scale: 1.06, y: -2 }}
-                                        whileTap={{ scale: 0.97 }}
-                                    >
-                                        <Download className="h-5 w-5" />
-                                        Download CV
-                                    </motion.a>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Education Section - Right Side (Decreased Width) */}
-                        <motion.div
-                            className="lg:col-span-1"
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                        >
-                            {/* Education Section */}
-                            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-linear-to-b from-white/8 to-white/4 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-sm transition hover:border-cyan-400/20 hover:from-white/10 hover:to-white/5">
-                                <div className="pointer-events-none absolute inset-0">
-                                    <div className="absolute -left-12 -top-16 h-44 w-44 rounded-full bg-cyan-500/10 blur-3xl" />
-                                    <div className="absolute -bottom-16 -right-12 h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
-                                </div>
-
-                                <div className="relative">
-                                    <div className="flex items-center gap-3 mb-6">
-                                        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-cyan-400 via-blue-500 to-fuchsia-500 text-slate-950 shadow-lg shadow-cyan-500/20">
-                                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82M12 3L1 9l11 6.18L23 9 12 3z" />
-                                            </svg>
-                                        </span>
-                                        <h4 className="text-2xl font-bold bg-linear-to-r from-cyan-300 via-white to-blue-300 bg-clip-text text-transparent">Education</h4>
-                                    </div>
-                                    <div className="space-y-6">
-                                    <div className="flex gap-4 items-stretch justify-between">
-                                        <div className="flex-1 min-w-0">
-                                            <h5 className="text-lg font-semibold text-white">SSC</h5>
-                                            <p className="text-gray-400 text-sm mt-1">Amena-Baki Residential Model School & College</p>
-                                            <p className="text-gray-500 text-sm mt-1">2021 • Science</p>
-                                            <p className="text-blue-400 text-sm font-semibold mt-2">Result: GPA 5.00 (out of 5.00)</p>
-                                        </div>
-                                        <Image
-                                            src="/1.png"
-                                            alt="SSC"
-                                            width={112}
-                                            height={112}
-                                            className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-blue-400/30 shadow-lg shadow-blue-500/10 shrink-0 self-center"
-                                        />
-                                    </div>
-                                    <div className="border-t border-gray-700 pt-4 flex gap-4 items-stretch justify-between">
-                                        <div className="flex-1 min-w-0">
-                                            <h5 className="text-lg font-semibold text-white">HSC</h5>
-                                            <p className="text-gray-400 text-sm mt-1">Cantonment School & College, Saidpur</p>
-                                            <p className="text-gray-500 text-sm mt-1">2023 • Science</p>
-                                            <p className="text-blue-400 text-sm font-semibold mt-2">Result: GPA 4.84 (out of 5.00)</p>
-                                        </div>
-                                        <Image
-                                            src="/2.png"
-                                            alt="HSC"
-                                            width={112}
-                                            height={112}
-                                            className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-blue-400/30 shadow-lg shadow-blue-500/10 shrink-0 self-center"
-                                        />
-                                    </div>
-                                    <div className="border-t border-gray-700 pt-4 flex gap-4 items-stretch justify-between">
-                                        <div className="flex-1 min-w-0">
-                                            <h5 className="text-lg font-semibold text-white">BSC</h5>
-                                            <p className="text-gray-400 text-sm mt-1">Daffodil International University</p>
-                                            <p className="text-gray-500 text-sm mt-1">Studying • CSE</p>
-                                            <p className="text-blue-400 text-sm font-semibold mt-2">Average: CGPA 3.29</p>
-                                        </div>
-                                        <Image
-                                            src="/3.png"
-                                            alt="BSC"
-                                            width={112}
-                                            height={112}
-                                            className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover border border-blue-400/30 shadow-lg shadow-blue-500/10 shrink-0 self-center"
-                                        />
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
+          <div className="relative mx-auto flex max-w-xl flex-col items-center">
+            <div className="relative grid h-44 w-44 place-items-center sm:h-48 sm:w-48 lg:h-52 lg:w-52">
+              <div className="absolute inset-0 rounded-full border border-cyan-400/10" />
+              <div className="absolute inset-5 rounded-full border border-blue-400/12" />
+              <div className="absolute right-3 top-4 h-4 w-4 rounded-full border border-cyan-200/70 bg-[#061038] shadow-[0_0_0_6px_rgba(45,112,255,0.18)]" />
+              <div className="relative h-32 w-32 overflow-hidden rounded-full bg-[linear-gradient(135deg,#19baff,#5b66ff,#b343ff)] p-1 shadow-[0_0_24px_rgba(34,164,255,0.28)] sm:h-36 sm:w-36 lg:h-40 lg:w-40">
+                <div className="relative h-full w-full overflow-hidden rounded-full bg-[#050816]">
+                  <Image
+                    src="/Porfile/Profile2.JPG"
+                    alt="Md. Mezbahul Islam"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 128px, (max-width: 1024px) 144px, 160px"
+                  />
                 </div>
-            </motion.section>
-        </div>
-    );
-};
+              </div>
+            </div>
 
-export default Aboutme;
+            <h2 className="mt-4 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-[2rem]">
+              Md. Mezbahul <span className="bg-[linear-gradient(90deg,#40c9ff,#6f78ff,#c84dff)] bg-clip-text text-transparent">Islam</span>
+            </h2>
+
+            <div className="mt-3 rounded-full border border-cyan-400/70 bg-cyan-400/10 px-4 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-cyan-200 sm:px-5">
+              Department of CSE
+            </div>
+
+            <div className="mt-4 flex items-center justify-center gap-2 text-base font-semibold text-white sm:text-lg">
+              <Building2 className="h-5 w-5 shrink-0 text-cyan-300" />
+              <span>Daffodil International University</span>
+            </div>
+
+            <p className="mt-4 max-w-[31rem] text-sm leading-6 text-white/75 sm:text-[0.95rem]">
+              Hi, I&apos;m Md. Mezbahul Islam, and I&apos;m from Bangladesh. I am a Web Developer and Graphic Designer.
+              Currently, I am studying Computer Science and Engineering at Daffodil International University. I can build
+              full-stack websites using the MERN stack.
+            </p>
+
+            <motion.a
+              href="/cv.pdf"
+              download
+              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[linear-gradient(90deg,#168cff,#764bff,#a83cf2)] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(39,125,255,0.24)]"
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </motion.a>
+          </div>
+        </motion.article>
+
+        <motion.article
+          className={`${cardClass} px-4 py-5 sm:px-7 sm:py-6 lg:px-8 lg:py-7`}
+          initial={{ opacity: 0, x: 22 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: 'easeOut', delay: 0.08 }}
+        >
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-[-4rem] top-[-4rem] h-56 w-56 rounded-full bg-blue-500/10 blur-3xl" />
+            <div className="absolute right-[-4rem] bottom-[-5rem] h-56 w-56 rounded-full bg-fuchsia-500/10 blur-3xl" />
+          </div>
+
+          <div className="relative">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl border border-blue-400/30 bg-[#0b1235] text-[#7fd5ff]">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold sm:text-2xl">Education</h3>
+                <div className="mt-2 h-px w-24 bg-[linear-gradient(90deg,#41c7ff,#ba59ff)]" />
+              </div>
+            </div>
+
+            <div className="relative sm:pl-8">
+              <div className="absolute left-3 top-2 bottom-2 hidden w-px bg-blue-300/45 sm:block" />
+
+              {education.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`relative grid grid-cols-[minmax(0,1fr)_80px] items-start gap-3 py-4 sm:grid-cols-[minmax(0,1fr)_96px] ${
+                    index !== education.length - 1 ? 'border-b border-white/10' : ''
+                  }`}
+                >
+                  <span className="absolute left-[-1.85rem] top-6 hidden h-5 w-5 place-items-center rounded-full border-2 border-blue-200 bg-[#0b1235] shadow-[0_0_0_4px_rgba(76,107,255,0.16)] sm:grid">
+                    <span className="h-2.5 w-2.5 rounded-full bg-blue-200" />
+                  </span>
+
+                  <div className="min-w-0">
+                    <h4 className="text-base font-bold text-[#23baff] sm:text-lg">{item.title}</h4>
+                    <p className="mt-1.5 text-sm leading-6 text-white/90 sm:text-[0.95rem]">{item.institute}</p>
+                    <p className="mt-1.5 text-sm text-white/55">
+                      {item.year} <span className="mx-2 text-white/30">|</span> {item.field}
+                    </p>
+                    <p className="mt-1.5 text-sm font-semibold text-[#25afff]">{item.result}</p>
+                  </div>
+
+                  <div className="flex justify-end self-start">
+                    <div className="grid h-20 w-20 place-items-center rounded-2xl border border-white/12 bg-black/15 p-2.5 sm:h-24 sm:w-24">
+                      <Image src={item.logo} alt={item.alt} width={96} height={96} className="h-full w-full object-contain" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.article>
+      </div>
+    </motion.section>
+  );
+}

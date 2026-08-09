@@ -187,7 +187,7 @@ export default function PhotoGallery() {
     <>
       <motion.section
         id="gallery"
-        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm relative overflow-hidden rounded-lg"
+        className="project-background py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden rounded-lg"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

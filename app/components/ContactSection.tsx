@@ -30,7 +30,7 @@ const ContactSection = () => {
   return (
     <motion.section
       id="contact"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-black/80 overflow-hidden"
+      className="project-background py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
