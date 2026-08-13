@@ -27,10 +27,10 @@ const PHOTOS: Photo[] = [
   { id: "15", url: "/Gallary/15.jpg", name: "11th Rover Mate Course of Bangladesh Scouts, Air Region" },
   { id: "20", url: "/Gallary/20.jpg", name: "Photo with Md. Nazmul Hasan (PRS, Wood Badger) sir & Ms Farhana Rahman (PRS, Wood Badge) ma'am" },
   { id: "21", url: "/Gallary/21.jpg", name: "Certificate taking photo" },
-  { id: "22", url: "/Gallary/22.JPG", name: "Certificate taking photo" },
-  { id: "23", url: "/Gallary/23.JPG", name: "Prize taking photo" },
-  { id: "24", url: "/Gallary/24.JPG", name: "Group Photo for receiving PS award at Bangladesh China Friendship International Conference" },
-  { id: "25", url: "/Gallary/25.JPG", name: "Photo at Bangladesh China Friendship International Conference" },
+  { id: "22", url: "/Gallary/22.jpg", name: "Certificate taking photo" },
+  { id: "23", url: "/Gallary/23.jpg", name: "Prize taking photo" },
+  { id: "24", url: "/Gallary/24.jpg", name: "Group Photo for receiving PS award at Bangladesh China Friendship International Conference" },
+  { id: "25", url: "/Gallary/25.jpg", name: "Photo at Bangladesh China Friendship International Conference" },
 ];
 
 const CATEGORY_MAP: Record<CategoryKey, string[]> = {

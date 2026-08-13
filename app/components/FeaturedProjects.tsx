@@ -52,7 +52,7 @@ const projects: Project[] = [
     description:
       'Kids School is a clean, modern, and responsive educational website built with HTML5 and CSS3, featuring a structured layout and engaging visual design.',
     image:
-      '/project/1.png',
+      '/Project/1.png',
     tech: ['HTML', 'CSS'],
     liveLink: 'https://mezbahul-241-15-929.github.io/B11-A2-Kids-School/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A2-Kids-School',
@@ -65,7 +65,7 @@ const projects: Project[] = [
     description:
       'Browse4Pets is a modern, responsive pet care website featuring pet categories, trending products, special offers, and essential supplies with a clean, engaging design.',
     image:
-      '/project/2.png',
+      '/Project/2.png',
     tech: ['HTML', 'CSS,','Tailwind CSS'],
     liveLink: 'https://mezbahul-241-15-929.github.io/B11-A3-Living-Lab-with-Tailwind-CSS/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A3-Living-Lab-with-Tailwind-CSS',
@@ -78,7 +78,7 @@ const projects: Project[] = [
     description:
       'Delicious Restaurant is a modern, responsive website featuring a home page, menu, contact, reservation, and mobile-friendly navigation.',
     image:
-      '/project/3.png',
+      '/Project/3.png',
     tech: ['HTML', 'CSS',],
     liveLink: 'http://mezbahul.me/Restaurant-Website/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Restaurant-Website',
@@ -91,7 +91,7 @@ const projects: Project[] = [
     description:
       'MyTunes is a clean, modern, and responsive music website built with HTML5 and CSS3, featuring a structured layout and professional visual design.',
     image:
-      '/project/4.png',
+      '/Project/4.png',
     tech: ['HTML', 'CSS'],
     liveLink: 'http://mezbahul.me/Music-Website-MyTunes/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Music-Website-MyTunes',
@@ -104,7 +104,7 @@ const projects: Project[] = [
     description:
       'G3 Architects is a modern, responsive website built with HTML and CSS, featuring clean layouts and professional visual design.',
     image:
-      '/project/5.png',
+      '/Project/5.png',
     tech: ['HTML', 'CSS'],
     liveLink: 'http://mezbahul.me/G3-Architects/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/G3-Architects',
@@ -117,7 +117,7 @@ const projects: Project[] = [
     description:
       'BoxNest is a modern, responsive news portal built with React and Firebase. ',
     image:
-      '/project/6.png',
+      '/Project/6.png',
     tech: ['React',"Tailwind CSS",'DaisyUI', 'Firebase'],
     liveLink: 'https://boxnest.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/BoxNest',
@@ -130,7 +130,7 @@ const projects: Project[] = [
     description:
       'Phudu is a modern React-based medical appointment app for discovering doctors, viewing profiles, booking appointments, and managing bookings.',
     image:
-      '/project/7.png',
+      '/Project/7.png',
     tech: ['React',"Tailwind CSS", 'Firebase','Netlify'],
     liveLink: 'https://phudumedicalappointment.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Medical-Appointment-Booking-Application',
@@ -143,7 +143,7 @@ const projects: Project[] = [
     description:
       'Plant Care is a modern, responsive platform for exploring, managing, and tracking plant care with secure authentication.',
     image:
-      '/project/8.png',
+      '/Project/8.png',
     tech: ['React',"Tailwind CSS", 'Firebase','Netlify', 'Node.js', 'Express', 'MongoDB'],
     liveLink: 'https://plantcareclient.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/plantcare',
@@ -156,7 +156,7 @@ const projects: Project[] = [
     description:
       'BookNest is a modern book management platform for discovering, organizing, and tracking books with secure authentication and a responsive UI.',
     image:
-      '/project/9.png',
+      '/Project/9.png',
     tech: ['React',"Tailwind CSS", 'Firebase', 'Node.js', 'Express', 'MongoDB'],
     liveLink: 'https://booknest-be304.web.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/BookNest_Client',
@@ -169,7 +169,7 @@ const projects: Project[] = [
     description:
       'PriceBazar is a modern price-comparison marketplace built with React and Vite, featuring product comparison, secure payments, and role-based vendor and admin dashboards.',
     image:
-      '/project/10.png',
+      '/Project/10.png',
     tech: ['React',"Tailwind CSS", 'Firebase', 'Node.js', 'Express', 'MongoDB'],
     liveLink: 'https://react-tempate.web.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/PriceBazar_Client',
