@@ -120,8 +120,7 @@ const CoursesAndProgramsSection = () => {
         >
           <motion.button
             onClick={() => setActiveTab('all')}
-            className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 flex items-center gap-2 ${
-              activeTab === 'all'
+className={`cursor-pointer flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition-all duration-300 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm ${              activeTab === 'all'
                 ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50'
                 : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'
             }`}

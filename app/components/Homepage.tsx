@@ -21,7 +21,13 @@ const technologies = [
 
 export default function Homepage() {
   return (
-    <section id="home" className={styles.hero}>
+    <motion.section
+      id="home"
+      className={styles.hero}
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.75, ease: 'easeOut' }}
+    >
       <div className={styles.shell}>
         <motion.div
           className={styles.copy}
@@ -35,17 +41,17 @@ export default function Homepage() {
           <p className={styles.intro}>I build scalable, user-friendly web applications<br className={styles.desktopBreak} /> and bring ideas to life with clean code.</p>
 
           <div className={styles.actions}>
-            <a className={styles.download} href="/cv.pdf" download><Download size={22} /> Download CV</a>
+            <a className={styles.download} href="/Mezbahul%20CV.pdf" target="_blank" rel="noopener noreferrer"><Download size={22} /> Download CV</a>
             <a className={styles.projects} href="#projects"><ExternalLink size={21} /> View Projects</a>
           </div>
 
           <div className={styles.socialLabel}>Find me on</div>
           <div className={styles.socials}>
-            <a href="https://github.com/Mezbahul-241-15-929" aria-label="GitHub" target="_blank" rel="noreferrer"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/mezbahulislam/" aria-label="LinkedIn" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
-            <a href="https://judge.beecrowd.com/en/profile/945547" aria-label="Beecrowd" target="_blank" rel="noreferrer"><span className={styles.beecrowdLogo}>bc</span></a>
-            <a href="https://www.facebook.com/MezbahulISLAMmeraj" aria-label="Facebook" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/mazbahulislam/" aria-label="Instagram" target="_blank" rel="noreferrer"><FaInstagram /></a>
+           <a className={styles.github} href="https://github.com/Mezbahul-241-15-929" aria-label="GitHub" target="_blank" rel="noreferrer"><FaGithub /></a>
+            <a className={styles.linkedin} href="https://www.linkedin.com/in/mezbahulislam/" aria-label="LinkedIn" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
+            <a className={styles.beecrowd} href="https://judge.beecrowd.com/en/profile/945547" aria-label="Beecrowd" target="_blank" rel="noreferrer"><span className={styles.beecrowdLogo}>bc</span></a>
+            <a className={styles.facebook} href="https://www.facebook.com/MezbahulISLAMmeraj" aria-label="Facebook" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+            <a className={styles.instagram} href="https://www.instagram.com/mazbahulislam/" aria-label="Instagram" target="_blank" rel="noreferrer"><FaInstagram /></a>
           </div>
         </motion.div>
 
@@ -71,6 +77,6 @@ export default function Homepage() {
           </div>
         </motion.div>
       </div>
-    </section>
+     </motion.section>
   );
 }

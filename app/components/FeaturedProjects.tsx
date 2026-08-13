@@ -240,7 +240,7 @@ export default function FeaturedProjects() {
         </motion.div>
 
         <motion.div
-          className="flex flex-wrap justify-center mb-12 gap-3 sm:gap-4"
+          className="flex justify-center mb-12 gap-2 sm:gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -250,7 +250,7 @@ export default function FeaturedProjects() {
             <motion.button
               key={option.id}
               onClick={() => setActiveFilter(option.id)}
-              className={`px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 ${
+              className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold cursor-pointer transition-all duration-300 flex-1 sm:flex-none whitespace-nowrap ${
                 activeFilter === option.id
                   ? option.activeClass
                   : 'border border-white/30 text-gray-300 hover:border-white/50 hover:text-white'

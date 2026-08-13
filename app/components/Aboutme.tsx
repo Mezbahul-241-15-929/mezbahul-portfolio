@@ -97,7 +97,7 @@ export default function Aboutme() {
             </div>
 
             <h2 className="mt-4 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-[2rem]">
-              Md. Mezbahul <span className="bg-[linear-gradient(90deg,#40c9ff,#6f78ff,#c84dff)] bg-clip-text text-transparent">Islam</span>
+              Md. Mezbahul <span>Islam</span>
             </h2>
 
             <div className="mt-3 rounded-full border border-cyan-400/70 bg-cyan-400/10 px-4 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-cyan-200 sm:px-5">
@@ -116,8 +116,9 @@ export default function Aboutme() {
             </p>
 
             <motion.a
-              href="/cv.pdf"
-              download
+              href="/Mezbahul%20CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[linear-gradient(90deg,#168cff,#764bff,#a83cf2)] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(39,125,255,0.24)]"
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -157,9 +158,8 @@ export default function Aboutme() {
               {education.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`relative grid grid-cols-[minmax(0,1fr)_80px] items-start gap-3 py-4 sm:grid-cols-[minmax(0,1fr)_96px] ${
-                    index !== education.length - 1 ? 'border-b border-white/10' : ''
-                  }`}
+                  className={`relative grid grid-cols-[minmax(0,1fr)_80px] items-start gap-3 py-4 sm:grid-cols-[minmax(0,1fr)_96px] ${index !== education.length - 1 ? 'border-b border-white/10' : ''
+                    }`}
                 >
                   <span className="absolute left-[-1.85rem] top-6 hidden h-5 w-5 place-items-center rounded-full border-2 border-blue-200 bg-[#0b1235] shadow-[0_0_0_4px_rgba(76,107,255,0.16)] sm:grid">
                     <span className="h-2.5 w-2.5 rounded-full bg-blue-200" />

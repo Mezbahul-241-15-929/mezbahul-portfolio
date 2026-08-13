@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mezbahul Islam",
-  description: "Welcome to my portfolio",
+  title: "Md. Mezbahul Islam",
+  description: "I am a passionate Full Stack Developer with expertise in React, Node.js, and MongoDB. I build scalable and user-friendly web applications, bringing ideas to life with clean code.",
 };
 
 export default function RootLayout({

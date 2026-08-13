@@ -10,29 +10,32 @@ type Photo = { id: string; url: string; name?: string };
 const CATEGORIES: CategoryKey[] = ["Gallery", "Certificate"];
 
 const PHOTOS: Photo[] = [
-  { id: "1", url: "/Gallary/1.jpg", name: "Award 1" },
-  { id: "2", url: "/Gallary/2.jpg", name: "Certificate 2" },
-  { id: "3", url: "/Gallary/3.jpg", name: "Certificate 3" },
-  { id: "4", url: "/Gallary/4.jpg", name: "Certificate 4" },
-  { id: "5", url: "/Gallary/5.jpg", name: "Certificate 5" },
-  { id: "6", url: "/Gallary/6.jpg", name: "Certificate 6" },
-  { id: "7", url: "/Gallary/7.jpg", name: "Certificate 7" },
-  { id: "8", url: "/Gallary/8.jpg", name: "Certificate 8" },
-  { id: "9", url: "/Gallary/9.jpg", name: "Certificate 9" },
-  { id: "10", url: "/Gallary/10.jpg", name: "Certificate 10" },
-  { id: "11", url: "/Gallary/11.jpg", name: "Certificate 11" },
-  { id: "12", url: "/Gallary/12.jpg", name: "Certificate 12" },
-  { id: "13", url: "/Gallary/13.jpg", name: "Certificate 13" },
-  { id: "14", url: "/Gallary/14.jpg", name: "Certificate 14" },
-  { id: "15", url: "/Gallary/15.jpg", name: "Certificate 15" },
-  { id: "20", url: "/Gallary/20.jpg", name: "Certificate 20" },
-  { id: "21", url: "/Gallary/21.jpg", name: "Certificate 21" },
-  { id: "22", url: "/Gallary/22.JPG", name: "Certificate 22" },
+  { id: "1", url: "/Gallary/1.jpg", name: "President’s Scout Award" },
+  { id: "2", url: "/Gallary/2.jpg", name: "7th National Comdeca 2025" },
+  { id: "3", url: "/Gallary/3.jpg", name: "Unlock The Algorithm Programming Contest - Spring 2025" },
+  { id: "4", url: "/Gallary/4.jpg", name: "TypeTrek Face Off - Spring 2024" },
+  { id: "5", url: "/Gallary/5.jpg", name: "3D Design to Fabrication : A Journey with Autodesk Fusion" },
+  { id: "6", url: "/Gallary/8.jpg", name: "How to Start Your Rover Scout Program (Part-01)" },
+  { id: "7", url: "/Gallary/7.jpg", name: "Basic Fundamentals of Scouting" },
+  { id: "8", url: "/Gallary/6.jpg", name: "Basic Video Editing" },
+  { id: "9", url: "/Gallary/9.jpg", name: "Become & Make A Leader" },
+  { id: "10", url: "/Gallary/10.jpg", name: "Being Safe Online" },
+  { id: "11", url: "/Gallary/11.jpg", name: "JOTA-JOTI 2024" },
+  { id: "12", url: "/Gallary/12.jpg", name: "JOTA-JOTI 2025" },
+  { id: "13", url: "/Gallary/13.jpg", name: "5th Air Cub Scout Unite Leader Basic Course of Bangladesh Scouts, Air Region" },
+  { id: "14", url: "/Gallary/14.jpg", name: "Day Camp of Bangladesh Scouts, Air Region" },
+  { id: "15", url: "/Gallary/15.jpg", name: "11th Rover Mate Course of Bangladesh Scouts, Air Region" },
+  { id: "20", url: "/Gallary/20.jpg", name: "Photo with Md. Nazmul Hasan (PRS, Wood Badger) sir & Ms Farhana Rahman (PRS, Wood Badge) ma'am" },
+  { id: "21", url: "/Gallary/21.jpg", name: "Certificate taking photo" },
+  { id: "22", url: "/Gallary/22.JPG", name: "Certificate taking photo" },
+  { id: "23", url: "/Gallary/23.JPG", name: "Prize taking photo" },
+  { id: "24", url: "/Gallary/24.JPG", name: "Group Photo for receiving PS award at Bangladesh China Friendship International Conference" },
+  { id: "25", url: "/Gallary/25.JPG", name: "Photo at Bangladesh China Friendship International Conference" },
 ];
 
 const CATEGORY_MAP: Record<CategoryKey, string[]> = {
-  "Certificate": ["1", "2", "3", "4", "5", "6","7", "8", "9", "10","11", "12", "13", "14", "15"],
-  "Gallery": ["20", "21", "22"],
+  "Certificate": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+  "Gallery": ["20", "21", "22", "23", "24", "25"],
 };
 
 const LABELS: Record<CategoryKey, string> = {
@@ -367,7 +370,7 @@ export default function PhotoGallery() {
 
             {/* Bottom hint */}
             <motion.div
-              className="absolute bottom-0 left-0 right-0 flex items-center justify-center p-4 sm:p-6 z-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+              className="hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.15 }}

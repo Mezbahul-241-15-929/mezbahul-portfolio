@@ -13,11 +13,13 @@ export default function Footer() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-7xl mx-auto w-full px-2 sm:px-0 lg:px-0">
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-slate-950 via-slate-900 to-black shadow-2xl">
-          <div className="flex items-center justify-center px-6 py-4 sm:px-10 sm:py-5">
-            <p className="text-sm sm:text-base text-slate-400 text-center">
-              &copy; {currentYear} Mezbahul. All rights reserved.
+     <div className="mx-auto w-full max-w-7xl">
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a1020] shadow-[0_18px_45px_rgba(0,0,0,0.24)]">
+          <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/70 to-transparent" />
+          <div className="pointer-events-none absolute -right-16 -top-20 h-40 w-40 rounded-full bg-purple-500/10 blur-3xl" />
+          <div className="relative flex flex-col items-center justify-center gap-2 px-6 py-5 text-center sm:flex-row sm:gap-3 sm:px-10 sm:py-6">
+            <p className="text-sm font-medium tracking-wide text-slate-400 sm:text-base">
+              &copy; {currentYear} <span className="font-semibold text-slate-200">Md. Mezbahul Islam</span>. All rights reserved.
             </p>
           </div>
         </div>

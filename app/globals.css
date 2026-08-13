@@ -55,3 +55,39 @@ body {
 .project-background {
   background-color: var(--project-background);
 }
+
+
+/* Official social brand colors */
+#contact aside .grid.grid-cols-5 > a:nth-child(1) > span:first-child {
+  background-color: #0a66c2;
+  box-shadow: 0 8px 18px rgb(10 102 194 / 25%);
+}
+
+#contact aside .grid.grid-cols-2 > a:nth-child(1) > span:first-child {
+  background-color: #0a66c2;
+  box-shadow: 0 8px 18px rgb(10 102 194 / 25%);
+}
+
+#contact aside .grid.grid-cols-5 > a:nth-child(2) > span:first-child {
+  background-color: #1877f2;
+  box-shadow: 0 8px 18px rgb(24 119 242 / 25%);
+}
+
+#contact aside .grid.grid-cols-5 > a:nth-child(3) > span:first-child {
+  background: linear-gradient(45deg, #405de6, #c13584 55%, #ffdc80);
+  box-shadow: 0 8px 18px rgb(193 53 132 / 25%);
+}
+
+#contact aside .grid.grid-cols-5 > a:nth-child(4) > span:first-child {
+  background-color: #181717;
+  box-shadow: 0 8px 18px rgb(24 23 23 / 30%);
+}
+
+#contact aside .grid.grid-cols-5 > a:nth-child(5) > span:first-child {
+  background-color: #1769ff;
+  box-shadow: 0 8px 18px rgb(23 105 255 / 25%);
+}
+
+#contact aside .grid.grid-cols-5 > a:nth-child(-n + 5) svg path {
+  fill: #ffffff;
+}
