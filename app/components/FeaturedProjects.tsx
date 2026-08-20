@@ -119,7 +119,7 @@ const projects: Project[] = [
       'Kids School is a clean, modern, and responsive educational website built with HTML5 and CSS3, featuring a structured layout and engaging visual design.',
     image:
       '/Project/1.png',
-    tech: ['HTML', 'CSS'],
+    tech: ['HTML', 'CSS','Netlify'],
     liveLink: 'https://kidschoool.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A2-Kids-School',
   },
@@ -132,7 +132,7 @@ const projects: Project[] = [
       'Browse4Pets is a modern, responsive pet care website featuring pet categories, trending products, special offers, and essential supplies with a clean, engaging design.',
     image:
       '/Project/2.png',
-    tech: ['HTML', 'CSS,','Tailwind CSS'],
+    tech: ['HTML', 'CSS,','Tailwind CSS','Netlify'],
     liveLink: 'https://browseforpets.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A3-Living-Lab-with-Tailwind-CSS',
   },
@@ -145,7 +145,7 @@ const projects: Project[] = [
       'Delicious Restaurant is a modern, responsive website featuring a home page, menu, contact, reservation, and mobile-friendly navigation.',
     image:
       '/Project/3.png',
-    tech: ['HTML', 'CSS',],
+    tech: ['HTML', 'CSS','Netlify'],
     liveLink: 'https://delicioousrestaurant.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Restaurant-Website',
   },
@@ -158,7 +158,7 @@ const projects: Project[] = [
       'MyTunes is a clean, modern, and responsive music website built with HTML5 and CSS3, featuring a structured layout and professional visual design.',
     image:
       '/Project/4.png',
-    tech: ['HTML', 'CSS'],
+    tech: ['HTML', 'CSS','Netlify'],
     liveLink: 'https://mymusictunes.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Music-Website-MyTunes',
   },
@@ -171,7 +171,7 @@ const projects: Project[] = [
       'G3 Architects is a modern, responsive website built with HTML and CSS, featuring clean layouts and professional visual design.',
     image:
       '/Project/5.png',
-    tech: ['HTML', 'CSS'],
+    tech: ['HTML', 'CSS','Netlify'],
     liveLink: 'https://g3architectss.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/G3-Architects',
   },
