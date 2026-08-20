@@ -120,7 +120,7 @@ const projects: Project[] = [
     image:
       '/Project/1.png',
     tech: ['HTML', 'CSS'],
-    liveLink: 'https://mezbahul-241-15-929.github.io/B11-A2-Kids-School/',
+    liveLink: 'https://kidschoool.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A2-Kids-School',
   },
   {
@@ -133,7 +133,7 @@ const projects: Project[] = [
     image:
       '/Project/2.png',
     tech: ['HTML', 'CSS,','Tailwind CSS'],
-    liveLink: 'https://mezbahul-241-15-929.github.io/B11-A3-Living-Lab-with-Tailwind-CSS/',
+    liveLink: 'https://browseforpets.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/B11-A3-Living-Lab-with-Tailwind-CSS',
   },
   {
@@ -146,7 +146,7 @@ const projects: Project[] = [
     image:
       '/Project/3.png',
     tech: ['HTML', 'CSS',],
-    liveLink: 'http://mezbahul.me/Restaurant-Website/',
+    liveLink: 'https://delicioousrestaurant.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Restaurant-Website',
   },
   {
@@ -159,7 +159,7 @@ const projects: Project[] = [
     image:
       '/Project/4.png',
     tech: ['HTML', 'CSS'],
-    liveLink: 'http://mezbahul.me/Music-Website-MyTunes/',
+    liveLink: 'https://mymusictunes.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/Music-Website-MyTunes',
   },
   {
@@ -172,7 +172,7 @@ const projects: Project[] = [
     image:
       '/Project/5.png',
     tech: ['HTML', 'CSS'],
-    liveLink: 'http://mezbahul.me/G3-Architects/',
+    liveLink: 'https://g3architectss.netlify.app/',
     githubLink: 'https://github.com/Mezbahul-241-15-929/G3-Architects',
   },
 
